@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "hmis-standards-metadata"
+version = "0.0.1"
+description = "The HMIS Data Dictionary, CSV Specifications, SPMs, PIT, HIC, and assorted other guiding documents influencing the HMIS data structure and standardization."
+authors = ["C. Thomas Brittain <cthomasbrittain@hotmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+rich = "^13.9.4"
+openai = "^1.54.4"
+black = "^24.10.0"
+python-dotenv = "^1.0.1"
+marker-pdf = "^1.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
