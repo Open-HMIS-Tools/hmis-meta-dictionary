@@ -9,21 +9,24 @@ from metadictionary_tools.hmis_mermaid_maker import FocusedERD
 from metadictionary_tools.hmis_models import HMISField, HMISFields
 
 
-fields = HMISFields.load()
-
-
 class HERDPainter:
     """
     HMIS ERD Painter creates scoped diagrams.
     """
 
-    def __init__(self, csvs_to_include: list[str], csvs_to_exclude: list[str]) -> None:
+    def __init__(
+        self, name: str, csvs_to_include: list[str], csvs_to_exclude: list[str]
+    ) -> None:
+        self.name = name
         self.csvs_to_include = csvs_to_include
         self.csvs_to_exclude = csvs_to_exclude
 
-    def write(self, output_path: str, as_markdown: bool = True) -> None:
+        self._fields = HMISFields.load()
+
+    def write(self, output_dir: str, as_markdown: bool = True) -> None:
+        name = self.name.replace(" ", "_").lower()
         filtered_fields = [
-            field for field in fields if field.csv in self.csvs_to_include
+            field for field in self._fields if field.csv in self.csvs_to_include
         ]
         fk_fields = [field for field in filtered_fields if field.is_foreign_key()]
 
@@ -34,11 +37,14 @@ class HERDPainter:
         if as_markdown:
             erd_markup = "```mermaid\n" + erd_markup + "\n```"
 
-        with open(output_path, "+w") as f:
+        output_filepath = f"{output_dir}/{name}.md"
+
+        with open(output_filepath, "+w") as f:
             f.write(erd_markup)
 
 
 client_centered_erd = HERDPainter(
+    "Client Centered",
     [
         "Client",
         "Enrollment",
@@ -50,5 +56,6 @@ client_centered_erd = HERDPainter(
     ],
     ["Export"],
 )
+client_centered_erd.write("./hmis_diagrams")
 
-client_centered_erd.write("test_it.md")
+# project_centered_erd = HERDPainter()

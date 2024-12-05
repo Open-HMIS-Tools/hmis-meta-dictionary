@@ -35,7 +35,6 @@ class FocusedERD:
                 continue
 
             if field.get_fk_table_name() in self._exclude_csvs:
-                print("true")
                 continue
 
             diagram_string += (
