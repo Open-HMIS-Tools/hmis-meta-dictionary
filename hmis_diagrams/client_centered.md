@@ -3,17 +3,19 @@ erDiagram
     User {
          S32 ExportID 
     }
-    Project {
-         S32 OrganizationID 
-         S32 UserID 
-         S32 ExportID 
-    }
     Organization {
          S32  UserID 
          S32  ExportID 
     }
-    ProjectCoC {
+    Enrollment {
+         S32 PersonalID 
          S32 ProjectID 
+         S32 HouseholdID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    Project {
+         S32 OrganizationID 
          S32 UserID 
          S32 ExportID 
     }
@@ -21,10 +23,8 @@ erDiagram
          S32 UserID 
          S32 ExportID 
     }
-    Enrollment {
-         S32 PersonalID 
+    ProjectCoC {
          S32 ProjectID 
-         S32 HouseholdID 
          S32 UserID 
          S32 ExportID 
     }

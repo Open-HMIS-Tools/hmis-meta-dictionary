@@ -1,29 +1,10 @@
 ```mermaid
 erDiagram
+    Organization {
+         S32  UserID 
+         S32  ExportID 
+    }
     User {
-         S32 ExportID 
-    }
-    AssessmentResults {
-         S32 AssessmentID 
-         S32 EnrollmentID 
-         S32 PersonalID 
-         S32 UserID 
-         S32 ExportID 
-    }
-    HMISParticipation {
-         S32 ProjectID 
-         S32 UserID 
-         S ExportID 
-    }
-    EmploymentEducation {
-         S32 EnrollmentID 
-         S32 PersonalID 
-         S32 UserID 
-         S32 ExportID 
-    }
-    Inventory {
-         S32 ProjectID 
-         S32 UserID 
          S32 ExportID 
     }
     CEParticipation {
@@ -31,37 +12,7 @@ erDiagram
          S32 UserID 
          S ExportID 
     }
-    Event {
-         S32 EnrollmentID 
-         S32 PersonalID 
-         S32 UserID 
-         S32 ExportID 
-    }
-    CurrentLivingSituation {
-         S32 EnrollmentID 
-         S32 PersonalID 
-         S32 UserID 
-         S32 ExportID 
-    }
-    AssessmentQuestions {
-         S32 AssessmentID 
-         S32 EnrollmentID 
-         S32 PersonalID 
-         S32 UserID 
-         S32 ExportID 
-    }
-    Organization {
-         S32  UserID 
-         S32  ExportID 
-    }
-    Enrollment {
-         S32 PersonalID 
-         S32 ProjectID 
-         S32 HouseholdID 
-         S32 UserID 
-         S32 ExportID 
-    }
-    HealthAndDV {
+    IncomeBenefits {
          S32 EnrollmentID 
          S32 PersonalID 
          S32 UserID 
@@ -79,17 +30,59 @@ erDiagram
          S32 UserID 
          S32 ExportID 
     }
-    Client {
-         S32 UserID 
-         S32 ExportID 
-    }
-    YouthEducationStatus {
+    CurrentLivingSituation {
          S32 EnrollmentID 
          S32 PersonalID 
          S32 UserID 
          S32 ExportID 
     }
-    Assessment {
+    HMISParticipation {
+         S32 ProjectID 
+         S32 UserID 
+         S ExportID 
+    }
+    Project {
+         S32 OrganizationID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    AssessmentQuestions {
+         S32 AssessmentID 
+         S32 EnrollmentID 
+         S32 PersonalID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    ProjectCoC {
+         S32 ProjectID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    HealthAndDV {
+         S32 EnrollmentID 
+         S32 PersonalID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    Affiliation {
+         S32 ProjectID 
+         S32 ResProjectID 
+         S32 UserID 
+         S ExportID 
+    }
+    Enrollment {
+         S32 PersonalID 
+         S32 ProjectID 
+         S32 HouseholdID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    Inventory {
+         S32 ProjectID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    Event {
          S32 EnrollmentID 
          S32 PersonalID 
          S32 UserID 
@@ -101,31 +94,38 @@ erDiagram
          S32 UserID 
          S32 ExportID 
     }
-    Project {
-         S32 OrganizationID 
-         S32 UserID 
-         S32 ExportID 
-    }
-    Affiliation {
-         S32 ProjectID 
-         S32 ResProjectID 
-         S32 UserID 
-         S ExportID 
-    }
-    ProjectCoC {
-         S32 ProjectID 
-         S32 UserID 
-         S32 ExportID 
-    }
-    IncomeBenefits {
-         S32 EnrollmentID 
-         S32 PersonalID 
-         S32 UserID 
-         S32 ExportID 
-    }
     Exit {
          S32 EnrollmentID 
          S32 PersonalID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    Assessment {
+         S32 EnrollmentID 
+         S32 PersonalID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    EmploymentEducation {
+         S32 EnrollmentID 
+         S32 PersonalID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    YouthEducationStatus {
+         S32 EnrollmentID 
+         S32 PersonalID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    AssessmentResults {
+         S32 AssessmentID 
+         S32 EnrollmentID 
+         S32 PersonalID 
+         S32 UserID 
+         S32 ExportID 
+    }
+    Client {
          S32 UserID 
          S32 ExportID 
     }
