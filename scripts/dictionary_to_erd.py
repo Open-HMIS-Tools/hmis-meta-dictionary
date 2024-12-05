@@ -23,6 +23,9 @@ class HERDPainter:
 
         self._fields = HMISFields.load()
 
+    def get_csv_names(self) -> list[str]:
+        return list(set([field.csv for field in self._fields]))
+
     def write(self, output_dir: str, as_markdown: bool = True) -> None:
         name = self.name.replace(" ", "_").lower()
         filtered_fields = [
@@ -46,16 +49,62 @@ class HERDPainter:
 client_centered_erd = HERDPainter(
     "Client Centered",
     [
-        "Client",
+        "Funder",
+        "IncomeBenefits",
+        "HealthAndDV",
+        "CEParticipation",
+        "AssessmentResults",
         "Enrollment",
-        "Project",
-        "Household",
-        "User",
-        "Organization",
+        "Exit",
+        "Assessment",
+        "Export",
+        "YouthEducationStatus",
         "ProjectCoC",
+        "EmploymentEducation",
+        "User",
+        "HMISParticipation",
+        "Organization",
+        "Services",
+        "Inventory",
+        "Event",
+        "AssessmentQuestions",
+        "Affiliation",
+        "CurrentLivingSituation",
+        "Client",
+        "Project",
+        "Disabilities",
     ],
     ["Export"],
 )
 client_centered_erd.write("./hmis_diagrams")
 
-# project_centered_erd = HERDPainter()
+"""
+'Funder',
+'IncomeBenefits',
+'HealthAndDV',
+'CEParticipation',
+'AssessmentResults',
+'Enrollment',
+'Exit',
+'Assessment',
+'Export',
+'YouthEducationStatus',
+'ProjectCoC',
+'EmploymentEducation',
+'User',
+'HMISParticipation',
+'Organization',
+'Services',
+'Inventory',
+'Event',
+'AssessmentQuestions',
+'Affiliation',
+'CurrentLivingSituation',
+'Client',
+'Project',
+'Disabilities'
+"""
+
+# project_centered_erd = HERDPainter(
+#     "Project Centered"
+# )
