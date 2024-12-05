@@ -1,0 +1,21 @@
+﻿CSV,Name,List,ValidationType,Validation
+Enrollment,LivingSituation,3.12.1 ,NotInList,"312,313,327,422,423,426,30,17,24,37"
+CurrentLivingSituation,CurrentLivingSituation,3.12.1,NotinList,"312,313,327,422,423,426,30,24"
+Exit,Destination,3.12.1,NotinList,"336,335,37"
+Exit,SubsidyInformation,W5.AB,CheckOtherElement,"if W5.1 = 1 then INLIST (1,2,3,4)"
+Exit,SubsidyInformation,W5.AB,CheckOtherElement,"If W5.1 = 2 then INLIST (11,12)"
+Disabilities,DisabilityResponse,4.10.2,CheckOtherElement,If DisabilityType = 10 then use list 4.10.2
+Disabilities,DisabilityResponse,1.8,CheckOtherElement,If Disability Type is NOT 10 then use list 1.8
+Services,TypeProvided,P1.2,CheckOtherElement,If RecordType = 141 then use list P1.2
+Services,TypeProvided,R14.2,CheckOtherElement,If RecordType = 142 then use list R14.2
+Services,TypeProvided,W1.2,CheckOtherElement,If RecordType = 143 then use list W1.2
+Services,TypeProvided,V2.2,CheckOtherElement,If RecordType = 144 then use list V2.2
+Services,TypeProvided,W2.2,CheckOtherElement,If RecordType = 151 then use list W2.2
+Services,TypeProvided,V3.3,CheckOtherElement,If RecordType = 152 then use list V3.3
+Services,TypeProvided,P2.2,CheckOtherElement,If RecordType = 161 then use list P2.2
+Services,TypeProvided,4.14,CheckOtherElement,If RecordType = 200 then use list 4.14
+Services,TypeProvided,V8.2,CheckOtherElement,If RecordType = 210 then use list V8.2
+Services,TypeProvided,C2.2,CheckOtherElement,If RecordType = 300 then use list C2.2
+Services,SubTypeProvided,V2.A,CheckOtherElement,If RecordType = 144 TypeProvided = 3 then use list V2.A
+Services,SubTypeProvided,V2.B,CheckOtherElement,If RecordType = 144 TypeProvided = 4 then use list V2.B
+Services,SubTypeProvided,V2.C,CheckOtherElement,If RecordType = 144 and TypeProvided = 5 then use list V2.C

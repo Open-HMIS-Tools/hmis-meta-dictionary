@@ -1,0 +1,776 @@
+﻿List,Value,Text
+1.1,1,Updated
+1.1,3,Reporting period
+1.1,4,Other
+1.2,1,Delta refresh
+1.2,2,Full refresh
+1.2,3,Other
+1.3,5,Physical disability
+1.3,6,Developmental disability
+1.3,7,Chronic health condition
+1.3,10,Substance use disorder
+1.3,8,HIV/AIDS
+1.3,9,Mental health disorder
+1.4,141,PATH service
+1.4,142,RHY service connections
+1.4,143,HOPWA financial assistance
+1.4,144,SSVF service
+1.4,151,PATH referral
+1.4,152,SSVF financial assistance
+1.4,161,PATH referral
+1.4,200,Bed night
+1.4,210,HUD-VASH OTH voucher tracking
+1.4,300,Moving On assistance provided
+1.5,1,Unhashed
+1.5,2,SHA-1 (no longer used for federal purposes)
+1.5,3,Hashed – other
+1.5,4,SHA-256 (RHY)
+1.6,8,Client doesn’t know
+1.6,9,Client prefers not to answer
+1.6,99,Data not collected
+1.7,0,No
+1.7,1,Yes
+1.7,99,Data not collected
+1.8,0,No
+1.8,1,Yes
+1.8,8,Client doesn’t know
+1.8,9,Client prefers not to answer
+1.8,99,Data not collected
+1.9,1,CoC HMIS
+1.9,2,Standalone/agency-specific application
+1.9,3,Data warehouse
+1.9,4,Other
+1.10,0,No
+1.10,1,Yes
+2.02.6,0,Emergency Shelter – Entry Exit
+2.02.6,1,Emergency Shelter – Night-by-Night
+2.02.6,10,PH – Housing with Services (no disability required for entry)
+2.02.6,11,Day Shelter
+2.02.6,12,Homelessness Prevention
+2.02.6,13,PH – Rapid Re-Housing
+2.02.6,14,Coordinated Entry
+2.02.6,2,Transitional Housing
+2.02.6,3,PH – Permanent Supportive Housing
+2.02.6,4,Street Outreach
+2.02.6,6,Services Only
+2.02.6,7,Other
+2.02.6,8,Safe Haven
+2.02.6,9,PH – Housing Only
+2.02.7,1,DV: Survivor of Domestic Violence
+2.02.7,3,HIV: Persons with HIV/AIDS
+2.02.7,4,NA: Not applicable
+2.02.8,0,No
+2.02.8,1,Yes
+2.02.8,2,Non-HOPWA Funded Project
+2.02.A,1,RRH: Services Only
+2.02.A,2,RRH: Housing with or without services
+2.02.D,1,Site-based – single site
+2.02.D,2,Site-based – clustered / multiple sites
+2.02.D,3,Tenant-based – scattered site
+2.03.4,1,Urban
+2.03.4,2,Suburban
+2.03.4,3,Rural
+2.03.4,99,Unknown / data not collected
+2.06.1,1,HUD: CoC – Homelessness Prevention (High Performing Comm. Only)
+2.06.1,2,HUD: CoC – Permanent Supportive Housing
+2.06.1,3,HUD: CoC – Rapid Re-Housing
+2.06.1,10,HUD: ESG – Rapid Rehousing
+2.06.1,11,HUD: ESG – Street Outreach
+2.06.1,13,HUD: HOPWA – Hotel/Motel Vouchers
+2.06.1,14,HUD: HOPWA – Housing Information
+2.06.1,15,HUD: HOPWA – Permanent Housing (facility based or TBRA)
+2.06.1,16,HUD: HOPWA – Permanent Housing Placement
+2.06.1,17,"HUD: HOPWA – Short-Term Rent, Mortgage, Utility assistance"
+2.06.1,18,HUD: HOPWA – Short-Term Supportive Facility
+2.06.1,19,HUD: HOPWA – Transitional Housing (facility based or TBRA)
+2.06.1,20,HUD: HUD/VASH
+2.06.1,21,HHS: PATH – Street Outreach & Supportive Services Only
+2.06.1,22,HHS: RHY – Basic Center Program (prevention and shelter)
+2.06.1,23,HHS: RHY – Maternity Group Home for Pregnant and Parenting Youth
+2.06.1,24,HHS: RHY – Transitional Living Program
+2.06.1,25,HHS: RHY – Street Outreach Project
+2.06.1,26,HHS: RHY – Demonstration Project
+2.06.1,27,VA: CRS Contract Residential Services
+2.06.1,30,VA: Community Contract Safe Haven Program
+2.06.1,33,VA: Supportive Services for Veteran Families
+2.06.1,34,N/A
+2.06.1,35,HUD: Pay for Success
+2.06.1,36,HUD: Public and Indian Housing (PIH) Programs
+2.06.1,37,VA: Grant Per Diem – Bridge Housing
+2.06.1,38,VA: Grant Per Diem – Low Demand
+2.06.1,39,VA: Grant Per Diem – Hospital to Housing
+2.06.1,4,HUD: CoC – Supportive Services Only
+2.06.1,40,VA: Grant Per Diem – Clinical Treatment
+2.06.1,41,VA: Grant Per Diem – Service Intensive Transitional Housing
+2.06.1,42,VA: Grant Per Diem – Transition in Place
+2.06.1,43,HUD: CoC – Youth Homeless Demonstration Program (YHDP)
+2.06.1,44,HUD: CoC – Joint Component TH/RRH
+2.06.1,45,VA: Grant Per Diem – Case Management/Housing Retention
+2.06.1,46,Local or Other Funding Source (Please Specify)
+2.06.1,47,HUD: ESG – CV
+2.06.1,48,HUD: HOPWA – CV
+2.06.1,5,HUD: CoC – Transitional Housing
+2.06.1,50,HUD: HOME
+2.06.1,51,HUD: HOME (ARP)
+2.06.1,52,HUD: PIH (Emergency Housing Voucher)
+2.06.1,53,HUD: ESG – RUSH
+2.06.1,54,HUD: Unsheltered Special NOFO
+2.06.1,55,HUD: Rural Special NOFO
+2.06.1,6,HUD: CoC – Safe Haven
+2.06.1,7,HUD: CoC – Single Room Occupancy (SRO)
+2.06.1,8,HUD: ESG – Emergency Shelter (operating and/or essential services)
+2.06.1,9,HUD: ESG – Homelessness Prevention
+2.07.4,1,Households without children
+2.07.4,3,Households with at least one adult and one child
+2.07.4,4,Households with only children
+2.07.5,1,Facility-based beds
+2.07.5,2,Voucher beds
+2.07.5,3,Other beds
+2.07.6,1,Year-round
+2.07.6,2,Seasonal
+2.07.6,3,Overflow
+2.08.1,0,Not Participating
+2.08.1,1,HMIS Participating
+2.08.1,2,Comparable Database Participating
+3.01.5,1,Full name reported
+3.01.5,2,"Partial, street name, or code name reported"
+3.01.5,8,Client doesn’t know
+3.01.5,9,Client prefers not to answer
+3.01.5,99,Data not collected
+3.02.2,1,Full SSN reported
+3.02.2,2,Approximate or partial SSN reported
+3.02.2,8,Client doesn’t know
+3.02.2,9,Client prefers not to answer
+3.02.2,99,Data not collected
+3.03.2,1,Full DOB reported
+3.03.2,2,Approximate or partial DOB reported
+3.03.2,8,Client doesn’t know
+3.03.2,9,Client prefers not to answer
+3.03.2,99,Data not collected
+3.12.1,116 ,"Place not meant for habitation (e.g., a vehicle, an abandoned building, bus/train/subway station/airport or anywhere outside) "
+3.12.1,302 ,Transitional housing for homeless persons (including homeless youth) 
+3.12.1,329 ,Residential project or halfway house with no homeless criteria 
+3.12.1,314 ,Hotel or motel paid for without emergency shelter voucher 
+3.12.1,332 ,Host Home (non-crisis) 
+3.12.1,312 ,"Staying or living with family, temporary tenure (e.g. room, apartment, or house) "
+3.12.1,313 ,"Staying or living with friends, temporary tenure (e.g. room, apartment, or house) "
+3.12.1,327 ,Moved from one HOPWA funded project to HOPWA TH 
+3.12.1,336 ,"Staying or living in a friend’s room, apartment, or house "
+3.12.1,335 ,"Staying or living in a family member’s room, apartment, or house "
+3.12.1,422 ,"Staying or living with family, permanent tenure "
+3.12.1,101 ,"Emergency shelter, including hotel or motel paid for with emergency shelter voucher, Host Home shelter  "
+3.12.1,423 ,"Staying or living with friends, permanent tenure "
+3.12.1,426 ,Moved from one HOPWA funded project to HOPWA PH 
+3.12.1,410 ,"Rental by client, no ongoing housing subsidy "
+3.12.1,435 ,"Rental by client, with ongoing housing subsidy "
+3.12.1,421 ,"Owned by client, with ongoing housing subsidy "
+3.12.1,411 ,"Owned by client, no ongoing housing subsidy "
+3.12.1,30 ,No exit interview completed 
+3.12.1,17 ,Other 
+3.12.1,24 ,Deceased 
+3.12.1,37 ,Worker unable to determine 
+3.12.1,118 ,Safe Haven 
+3.12.1,8 ,Client doesn’t know 
+3.12.1,9 ,Client prefers not to answer 
+3.12.1,99 ,Data not collected 
+3.12.1,215 ,Foster care home or foster care group home 
+3.12.1,206 ,Hospital or other residential non-psychiatric medical facility 
+3.12.1,207 ,"Jail, prison, or juvenile detention facility "
+3.12.1,225 ,Long-term care facility or nursing home 
+3.12.1,204 ,Psychiatric hospital or other psychiatric facility 
+3.12.1,205 ,Substance abuse treatment facility or detox center 
+3.12.A,419,VASH housing subsidy
+3.12.A,420,"Rental by client, with other ongoing housing subsidy"
+3.12.A,428,GPD TIP housing subsidy
+3.12.A,431,RRH or equivalent subsidy
+3.12.A,433,HCV voucher (tenant or project based) (not dedicated)
+3.12.A,434,Public housing unit
+3.12.A,436,Housing Stability Voucher
+3.12.A,437,Family Unification Program Voucher (FUP)
+3.12.A,438,Foster Youth to Independence Initiative (FYI)
+3.12.A,439,Permanent Supportive Housing
+3.12.A,440,Other permanent housing dedicated for formerly homeless persons
+3.15.1,1,Self (Head of Household)
+3.15.1,2,Head of household’s child
+3.15.1,3,Head of household’s spouse or partner
+3.15.1,4,Head of household’s other relation member
+3.15.1,5,Other: non-relation member
+3.15.1,99,Data not collected
+3.917.2,10,One night or less
+3.917.2,11,Two to six nights
+3.917.2,2,"One week or more, but less than one month"
+3.917.2,3,"One month or more, but less than 90 days"
+3.917.2,4,90 days or more but less than one year
+3.917.2,5,One year or longer
+3.917.2,8,Client doesn’t know
+3.917.2,9,Client prefers not to answer
+3.917.2,99,Data not collected
+3.917.4,1,One time
+3.917.4,2,Two times
+3.917.4,3,Three times
+3.917.4,4,Four or more times
+3.917.4,8,Client doesn’t know
+3.917.4,9,Client prefers not to answer
+3.917.4,99,Data not collected
+3.917.5,101,1
+3.917.5,102,2
+3.917.5,103,3
+3.917.5,104,4
+3.917.5,105,5
+3.917.5,106,6
+3.917.5,107,7
+3.917.5,108,8
+3.917.5,109,9
+3.917.5,110,10
+3.917.5,8,Client doesn’t know
+3.917.5,9,Client prefers not to answer
+3.917.5,99,Data not collected
+3.917.5,111,11
+3.917.5,112,12
+3.917.5,113,More than 12 months
+4.04.A,1,Applied; decision pending
+4.04.A,2,Applied; client not eligible
+4.04.A,3,Client did not apply
+4.04.A,4,Insurance type n/a for this client
+4.04.A,8,Client doesn’t know
+4.04.A,9,Client prefers not to answer
+4.04.A,99,Data not collected
+4.10.2,0,No
+4.10.2,1,Alcohol use disorder
+4.10.2,2,Drug use disorder
+4.10.2,3,Both alcohol and drug use disorders
+4.10.2,8,Client doesn’t know
+4.10.2,9,Client prefers not to answer
+4.10.2,99,Data not collected
+4.11.A,1,Within the past three months
+4.11.A,2,Three to six months ago (excluding six months exactly)
+4.11.A,3,Six months to one year ago (excluding one year exactly)
+4.11.A,4,One year or more
+4.11.A,8,Client doesn’t know
+4.11.A,9,Client prefers not to answer
+4.11.A,99,Data not collected
+4.14,200,BedNight
+4.19.3,1,Phone
+4.19.3,2,Virtual
+4.19.3,3,In Person
+4.19.4,1,Crisis Needs Assessment
+4.19.4,2,Housing Needs Assessment
+4.19.7,1,Placed on prioritization list
+4.19.7,2,Not placed on prioritization list
+4.20.2,1,Referral to Prevention Assistance project
+4.20.2,10,Referral to Emergency Shelter bed opening
+4.20.2,11,Referral to Transitional Housing bed/unit opening
+4.20.2,12,Referral to Joint TH-RRH project/unit/resource opening
+4.20.2,13,Referral to RRH project resource opening
+4.20.2,14,Referral to PSH project resource opening
+4.20.2,15,Referral to Other PH project/unit/resource opening
+4.20.2,16,Referral to emergency assistance/flex fund/furniture assistance
+4.20.2,17,Referral to Emergency Housing Voucher (EHV)
+4.20.2,18,Referral to a Housing Stability Voucher
+4.20.2,2,Problem Solving/Diversion/Rapid Resolution intervention or service
+4.20.2,3,Referral to scheduled Coordinated Entry Crisis Needs Assessment
+4.20.2,4,Referral to scheduled Coordinated Entry Housing Needs Assessment
+4.20.2,5,Referral to Post-placement/ follow-up case management
+4.20.2,6,Referral to Street Outreach project or services
+4.20.2,7,Referral to Housing Navigation project or services
+4.20.2,8,Referral to Non-continuum services: Ineligible for continuum services
+4.20.2,9,Referral to Non-continuum services: No availability in continuum services
+4.20.D,1,Successful referral: client accepted
+4.20.D,2,Unsuccessful referral: client rejected
+4.20.D,3,Unsuccessful referral: provider rejected
+5.03.1,1,Project entry
+5.03.1,2,Update
+5.03.1,3,Project exit
+5.03.1,5,Annual assessment
+5.03.1,6,Post-exit (not used in CSV)
+C2.2,1,Subsidized housing application assistance
+C2.2,2,Financial assistance for Moving On
+C2.2,3,Non-financial assistance for Moving On
+C2.2,4,Housing referral/placement
+C2.2,5,Other (please specify)
+C3.2,0,Not currently enrolled in any school or educational course
+C3.2,1,Currently enrolled but NOT attending regularly (when school or the course is in session)
+C3.2,2,Currently enrolled and attending regularly (when school or the course is in session)
+C3.2,8,Client doesn’t know
+C3.2,9,Client prefers not to answer
+C3.2,99,Data not collected
+C3.A,0,K12: Graduated from high school
+C3.A,1,K12: Obtained GED
+C3.A,2,K12: Dropped out
+C3.A,3,K12: Suspended
+C3.A,4,K12: Expelled
+C3.A,5,Higher education: Pursuing a credential but not currently attending
+C3.A,6,Higher education: Dropped out
+C3.A,7,Higher education: Obtained a credential/degree
+C3.A,8,Client doesn't know
+C3.A,9,Client prefers not to answer
+C3.A,99,Data not collected
+C3.B,0,Pursuing a high school diploma or GED
+C3.B,1,Pursuing Associate’s Degree
+C3.B,2,Pursuing Bachelor’s Degree
+C3.B,3,Pursuing Graduate Degree
+C3.B,4,Pursuing other post-secondary credential
+C3.B,8,Client doesn't know
+C3.B,9,Client prefers not to answer
+C3.B,99,Data not collected
+P1.2,1,Re-engagement
+P1.2,10,Housing eligibility determination
+P1.2,11,Security deposits
+P1.2,12,One-time rent for eviction prevention
+P1.2,14,Clinical assessment
+P1.2,2,Screening
+P1.2,3,Habilitation/rehabilitation
+P1.2,4,Community mental health
+P1.2,5,Substance use treatment
+P1.2,6,Case management
+P1.2,7,Residential supportive services
+P1.2,8,Housing minor renovation
+P1.2,9,Housing moving assistance
+P2.2,1,Community mental health
+P2.2,10,Medical insurance
+P2.2,11,Temporary housing
+P2.2,2,Substance use treatment
+P2.2,3,Primary health/dental care
+P2.2,4,Job training
+P2.2,5,Educational services
+P2.2,6,Housing services
+P2.2,7,Permanent housing
+P2.2,8,Income assistance
+P2.2,9,Employment assistance
+P2.A,1,Attained
+P2.A,2,Not attained
+P2.A,3,Unknown
+P3.A,1,Client was found ineligible for PATH
+P3.A,2,Client was not enrolled for other reason(s)
+P3.A,3,Unable to locate client
+R1.1,1,Self-Referral
+R1.1,11,Temporary Shelter
+R1.1,18,Residential Project
+R1.1,2,Individual: Parent/Guardian/Relative/Friend/Foster Parent/Other Individual
+R1.1,28,Hotline
+R1.1,30,Child Welfare/CPS
+R1.1,34,Juvenile Justice
+R1.1,35,Law Enforcement/ Police
+R1.1,37,Mental Hospital
+R1.1,38,School
+R1.1,39,Other Organization
+R1.1,7,Outreach Project
+R1.1,8,Client doesn’t know
+R1.1,9,Client prefers not to answer
+R1.1,99,Data not collected
+R11.A,1,Less than one year
+R11.A,2,1 to 2 years
+R11.A,3,3 to 5 or more years
+R14.2,10,Parenting education for youth with children
+R14.2,12,Post-natal care for client (person who gave birth)
+R14.2,13,Pre-natal care
+R14.2,14,Health/medical care
+R14.2,2,Community service/service learning (CSL)
+R14.2,5,Education
+R14.2,6,Employment and/or training services
+R14.2,7,Criminal justice /legal services
+R14.2,8,Life skills training
+R14.2,17,Substance use disorder treatment
+R14.2,18,Substance use disorder Ed/Prevention Services
+R14.2,26,Home-based Services
+R14.2,27,Post-natal newborn care (wellness exams; immunizations)
+R14.2,28,STD Testing
+R14.2,29,Street-based Services
+R15.B,1,44929
+R15.B,2,45023
+R15.B,3,45149
+R15.B,4,12 or more
+R15.B,8,Client doesn’t know
+R15.B,9,Client prefers not to answer
+R15.B,99,Data not collected
+R17.1,1,Completed project
+R17.1,2,Client voluntarily left early
+R17.1,3,Client was expelled or otherwise involuntarily discharged from project
+R17.A,1,Criminal activity/destruction of property/violence
+R17.A,2,Non-compliance with project rules
+R17.A,3,Non-payment of rent/occupancy charge
+R17.A,4,Reached maximum time allowed by project
+R17.A,5,Project terminated
+R17.A,6,Unknown/disappeared
+R19.A,0,No
+R19.A,1,Yes
+R19.A,2,Worker does not know
+R2.A,1,Out of age range
+R2.A,2,Ward of the state
+R2.A,3,Ward of the criminal justice system
+R2.A,4,Other
+R2.A,99,Data not collected
+R20.2,0,No
+R20.2,1,Yes
+R20.2,9,Client prefers not to answer
+R3.1,1,Heterosexual
+R3.1,2,Gay
+R3.1,3,Lesbian
+R3.1,4,Bisexual
+R3.1,5,Questioning / unsure
+R3.1,6,Other
+R3.1,8,Client doesn’t know
+R3.1,9,Client prefers not to answer
+R3.1,99,Data not collected
+R4.1,1,Less than grade 5
+R4.1,2,Grades 5-6
+R4.1,3,Grades 7-8
+R4.1,4,Grades 9-11
+R4.1,5,Grade 12
+R4.1,6,School program does not have grade levels
+R4.1,7,GED
+R4.1,8,Client doesn’t know
+R4.1,10,Some college
+R4.1,11,Associate’s degree
+R4.1,12,Bachelor’s degree
+R4.1,13,Graduate degree
+R4.1,14,Vocational certification
+R4.1,9,Client prefers not to answer
+R4.1,99,Data not collected
+R5.1,1,Attending school regularly
+R5.1,2,Attending school irregularly
+R5.1,3,Graduated from high school
+R5.1,4,Obtained GED
+R5.1,5,Dropped out
+R5.1,6,Suspended
+R5.1,7,Expelled
+R5.1,8,Client doesn’t know
+R5.1,9,Client prefers not to answer
+R5.1,99,Data not collected
+R6.A,1,Full-time
+R6.A,2,Part-time
+R6.A,3,Seasonal / sporadic (including day labor)
+R6.A,99,Data not collected
+R6.B,1,Looking for work
+R6.B,2,Unable to work
+R6.B,3,Not looking for work
+R6.B,99,Data not collected
+R7.1,1,Excellent
+R7.1,2,Very good
+R7.1,3,Good
+R7.1,4,Fair
+R7.1,5,Poor
+R7.1,8,Client doesn’t know
+R7.1,9,Client prefers not to answer
+R7.1,99,Data not collected
+V1.11,1,Army
+V1.11,2,Air Force
+V1.11,3,Navy
+V1.11,4,Marines
+V1.11,6,Coast Guard
+V1.11,7,Space Force
+V1.11,8,Client doesn’t know
+V1.11,9,Client prefers not to answer
+V1.11,99,Data not collected
+V1.12,1,Honorable
+V1.12,2,General under honorable conditions
+V1.12,4,Bad conduct
+V1.12,5,Dishonorable
+V1.12,6,Under other than honorable conditions (OTH)
+V1.12,7,Uncharacterized
+V1.12,8,Client doesn’t know
+V1.12,9,Client prefers not to answer
+V1.12,99,Data not collected
+V2.2,1,Outreach services
+V2.2,2,Case management services
+V2.2,3,Assistance obtaining VA benefits
+V2.2,4,Assistance obtaining/coordinating other public benefits
+V2.2,5,Direct provision of other public benefits
+V2.2,6,Other (non-TFA) supportive service approved by VA
+V2.2,7,Shallow Subsidy
+V2.2,8,Returning Home
+V2.2,9,Rapid Resolution
+V2.A,1,VA vocational and rehabilitation counseling
+V2.A,2,Employment and training services
+V2.A,3,Educational assistance
+V2.A,4,Health care services
+V2.B,1,Health care services
+V2.B,10,Legal services - restore / acquire driver’s license
+V2.B,11,Legal services – other
+V2.B,12,Child care
+V2.B,13,Housing counseling
+V2.B,2,Daily living services
+V2.B,3,Personal financial planning services
+V2.B,4,Transportation services
+V2.B,5,Income support services
+V2.B,6,Fiduciary and representative payee services
+V2.B,7,Legal services - child support
+V2.B,8,Legal services - eviction prevention
+V2.B,9,Legal services - outstanding fines and penalties
+V2.C,1,Personal financial planning services
+V2.C,10,Child care
+V2.C,11,Housing counseling
+V2.C,2,Transportation services
+V2.C,3,Income support services
+V2.C,4,Fiduciary and representative payee services
+V2.C,5,Legal services - child support
+V2.C,6,Legal services - eviction prevention
+V2.C,7,Legal services - outstanding fines and penalties
+V2.C,8,Legal services - restore / acquire driver’s license
+V2.C,9,Legal services – other
+V3.3,1,Rental assistance
+V3.3,10,Child care
+V3.3,2,Security deposit
+V3.3,3,Utility deposit
+V3.3,4,Utility fee payment assistance
+V3.3,5,Moving costs
+V3.3,8,Transportation services: tokens/vouchers
+V3.3,9,Transportation services: vehicle repair/maintenance
+V3.3,12,General housing stability assistance
+V3.3,14,Emergency housing assistance
+V3.3,15,Shallow Subsidy –Financial Assistance
+V3.3,16,Food assistance
+V3.3,17,Landlord Incentive
+V3.3,18,Tenant Incentive
+V4.1,1,30% or less
+V4.1,2,31% to 50%
+V4.1,3,51% to 80%
+V4.1,4,81% or greater
+V4.1,99,Data not collected
+V6.1,402,"(402) Togus, ME"
+V6.1,405,"(405) White River Junction, VT"
+V6.1,436,(436) Montana HCS
+V6.1,437,"(437) Fargo, ND"
+V6.1,438,"(438) Sioux Falls, SD"
+V6.1,442,"(442) Cheyenne, WY"
+V6.1,459,"(459) Honolulu, HI"
+V6.1,460,"(460) Wilmington, DE"
+V6.1,463,"(463) Anchorage, AK"
+V6.1,501,(501) New Mexico HCS
+V6.1,502,"(502) Alexandria, LA"
+V6.1,503,"(503) Altoona, PA"
+V6.1,504,"(504) Amarillo, TX"
+V6.1,506,"(506) Ann Arbor, MI"
+V6.1,508,"(508) Atlanta, GA"
+V6.1,509,"(509) Augusta, GA"
+V6.1,512,"(512) Baltimore HCS, MD"
+V6.1,515,"(515) Battle Creek, MI"
+V6.1,516,"(516) Bay Pines, FL"
+V6.1,517,"(517) Beckley, WV"
+V6.1,518,"(518) Bedford, MA"
+V6.1,519,"(519) Big Spring, TX"
+V6.1,520,"(520) Gulf Coast HCS, MS"
+V6.1,521,"(521) Birmingham, AL"
+V6.1,523,"(523) VA Boston HCS, MA"
+V6.1,526,"(526) Bronx, NY"
+V6.1,528,"(528) Western New York, NY"
+V6.1,529,"(529) Butler, PA"
+V6.1,531,"(531) Boise, ID"
+V6.1,534,"(534) Charleston, SC"
+V6.1,537,"(537) Jesse Brown VAMC (Chicago), IL"
+V6.1,538,"(538) Chillicothe, OH"
+V6.1,539,"(539) Cincinnati, OH"
+V6.1,540,"(540) Clarksburg, WV"
+V6.1,541,"(541) Cleveland, OH"
+V6.1,542,"(542) Coatesville, PA"
+V6.1,544,"(544) Columbia, SC"
+V6.1,546,"(546) Miami, FL"
+V6.1,548,"(548) West Palm Beach, FL"
+V6.1,549,"(549) Dallas, TX"
+V6.1,550,"(550) Danville, IL"
+V6.1,552,"(552) Dayton, OH"
+V6.1,553,"(553) Detroit, MI"
+V6.1,554,"(554) Denver, CO"
+V6.1,556,(556) Captain James A Lovell FHCC
+V6.1,557,"(557) Dublin, GA"
+V6.1,558,"(558) Durham, NC"
+V6.1,561,"(561) New Jersey HCS, NJ"
+V6.1,562,"(562) Erie, PA"
+V6.1,564,"(564) Fayetteville, AR"
+V6.1,565,"(565) Fayetteville, NC"
+V6.1,568,"(568) Black Hills HCS, SD"
+V6.1,570,"(570) Fresno, CA"
+V6.1,573,"(573) Gainesville, FL"
+V6.1,575,"(575) Grand Junction, CO"
+V6.1,578,"(578) Hines, IL"
+V6.1,580,"(580) Houston, TX"
+V6.1,581,"(581) Huntington, WV"
+V6.1,583,"(583) Indianapolis, IN"
+V6.1,585,"(585) Iron Mountain, MI"
+V6.1,586,"(586) Jackson, MS"
+V6.1,589,"(589) Kansas City, MO"
+V6.1,590,"(590) Hampton, VA"
+V6.1,593,"(593) Las Vegas, NV"
+V6.1,595,"(595) Lebanon, PA"
+V6.1,596,"(596) Lexington, KY"
+V6.1,598,"(598) Little Rock, AR"
+V6.1,600,"(600) Long Beach, CA"
+V6.1,603,"(603) Louisville, KY"
+V6.1,605,"(605) Loma Linda, CA"
+V6.1,607,"(607) Madison, WI"
+V6.1,608,"(608) Manchester, NH"
+V6.1,610,"(610) Northern Indiana HCS, IN"
+V6.1,612,"(612) N. California, CA"
+V6.1,613,"(613) Martinsburg, WV"
+V6.1,614,"(614) Memphis, TN"
+V6.1,618,"(618) Minneapolis, MN"
+V6.1,619,"(619) Central Alabama Veterans HCS, AL"
+V6.1,620,"(620) VA Hudson Valley HCS, NY"
+V6.1,621,"(621) Mountain Home, TN"
+V6.1,623,"(623) Muskogee, OK"
+V6.1,626,"(626) Middle Tennessee HCS, TN"
+V6.1,629,"(629) New Orleans, LA"
+V6.1,630,"(630) New York Harbor HCS, NY"
+V6.1,631,(631) VA Central Western Massachusetts HCS
+V6.1,632,"(632) Northport, NY"
+V6.1,635,"(635) Oklahoma City, OK"
+V6.1,636,"(636) Nebraska-W Iowa, NE"
+V6.1,637,"(637) Asheville, NC"
+V6.1,640,"(640) Palo Alto, CA"
+V6.1,642,"(642) Philadelphia, PA"
+V6.1,644,"(644) Phoenix, AZ"
+V6.1,646,"(646) Pittsburgh, PA"
+V6.1,648,"(648) Portland, OR"
+V6.1,649,(649) Northern Arizona HCS
+V6.1,650,"(650) Providence, RI"
+V6.1,652,"(652) Richmond, VA"
+V6.1,653,"(653) Roseburg, OR"
+V6.1,654,"(654) Reno, NV"
+V6.1,655,"(655) Saginaw, MI"
+V6.1,656,"(656) St. Cloud, MN"
+V6.1,459GE,(459GE) Guam
+V6.1,528A5,"(528A5) Canandaigua, NY"
+V6.1,528A6,"(528A6) Bath, NY"
+V6.1,528A7,"(528A7) Syracuse, NY"
+V6.1,528A8,"(528A8) Albany, NY"
+V6.1,589A4,"(589A4) Columbia, MO"
+V6.1,589A5,"(589A5) Kansas City, MO"
+V6.1,589A6,"(589A6) Eastern KS HCS, KS"
+V6.1,589A7,"(589A7) Wichita, KS"
+V6.1,636A6,"(636A6) Central Iowa, IA"
+V6.1,636A8,"(636A8) Iowa City, IA"
+V6.1,657,"(657) St. Louis, MO"
+V6.1,657A4,"(657A4) Poplar Bluff, MO"
+V6.1,657A5,"(657A5) Marion, IL"
+V6.1,658,"(658) Salem, VA"
+V6.1,659,"(659) Salisbury, NC"
+V6.1,660,"(660) Salt Lake City, UT"
+V6.1,662,"(662) San Francisco, CA"
+V6.1,663,"(663) VA Puget Sound, WA"
+V6.1,664,"(664) San Diego, CA"
+V6.1,666,"(666) Sheridan, WY"
+V6.1,667,"(667) Shreveport, LA"
+V6.1,668,"(668) Spokane, WA"
+V6.1,671,"(671) San Antonio, TX"
+V6.1,672,"(672) San Juan, PR"
+V6.1,673,"(673) Tampa, FL"
+V6.1,674,"(674) Temple, TX"
+V6.1,675,"(675) Orlando, FL"
+V6.1,676,"(676) Tomah, WI"
+V6.1,678,(678) Southern Arizona HCS
+V6.1,679,"(679) Tuscaloosa, AL"
+V6.1,687,"(687) Walla Walla, WA"
+V6.1,688,"(688) Washington, DC"
+V6.1,689,"(689) VA Connecticut HCS, CT"
+V6.1,691,(691) Greater Los Angeles HCS
+V6.1,692,"(692) White City, OR"
+V6.1,693,"(693) Wilkes-Barre, PA"
+V6.1,695,"(695) Milwaukee, WI"
+V6.1,740,(740) VA Texas Valley Coastal Bend HCS
+V6.1,756,"(756) El Paso, TX"
+V6.1,757,"(757) Columbus, OH"
+V6.1,99,Data not collected
+V7.A,0,1-6 days
+V7.A,1,7-13 days
+V7.A,2,14-21 days
+V7.A,3,More than 21 days
+V7.A,99,Data not collected
+V7.B,0,"$0 (i.e., not employed, not receiving cash benefits, no other current income)"
+V7.B,1,1-14% of Area Median Income (AMI) for household size
+V7.B,2,15-30% of AMI for household size
+V7.B,3,More than 30% of AMI for household size
+V7.B,99,Data not collected
+V7.C,0,Most recent episode occurred in the last year
+V7.C,1,Most recent episode occurred more than one year ago
+V7.C,2,None
+V7.C,99,Data not collected
+V7.G,0,No prior rental evictions
+V7.G,1,1 prior rental eviction
+V7.G,2,2 or more prior rental evictions
+V7.G,99,Data not collected
+V7.I,0,Not incarcerated
+V7.I,1,Incarcerated once
+V7.I,2,Incarcerated two or more times
+V7.I,99,Data not collected
+V7.O,0,No
+V7.O,1,Youngest child is under 1 year old
+V7.O,2,"Youngest child is 1 to 6 years old and/or one or more children (any age) require significant
+care"
+V7.O,99,Data not collected
+V8.2,1,Referral package forwarded to PHA
+V8.2,10,Veteran exited – family maintained the voucher
+V8.2,11,Veteran exited – prior to ever receiving a voucher
+V8.2,12,Other
+V8.2,2,Voucher denied by PHA
+V8.2,3,Voucher issued by PHA
+V8.2,4,Voucher revoked or expired
+V8.2,5,Voucher in use – veteran moved into housing
+V8.2,6,Voucher was ported locally
+V8.2,7,Voucher was administratively absorbed by new PHA
+V8.2,8,Voucher was converted to Housing Choice Voucher
+V8.2,9,Veteran exited – voucher was returned
+V9.1,1,Accomplished goals and/or obtained services and no longer needs CM
+V9.1,10,Veteran too ill to participate at this time
+V9.1,11,Veteran is incarcerated
+V9.1,12,Veteran is deceased
+V9.1,13,Other
+V9.1,2,Transferred to another HUD/VASH program site
+V9.1,3,Found/chose other housing
+V9.1,4,Did not comply with HUD/VASH CM
+V9.1,5,Eviction and/or other housing related issues
+V9.1,6,Unhappy with HUD/VASH housing
+V9.1,7,No longer financially eligible for HUD/VASH voucher
+V9.1,8,No longer interested in participating in this program
+V9.1,9,Veteran cannot be located
+W1.2,1,Adult day care and personal assistance
+W1.2,2,Case management
+W1.2,3,Child care
+W1.2,4,Criminal justice/legal services
+W1.2,10,Mental health care/counseling
+W1.2,11,Outreach and/or engagement
+W1.2,12,Substance use services/treatment
+W1.2,13,Transportation
+W1.2,14,Other HOPWA funded service
+W1.2,5,Education
+W1.2,6,Employment and training services
+W1.2,7,Food/meals/nutritional services
+W1.2,8,Health/medical care
+W1.2,9,Life skills training
+W2.2,1,Rental assistance
+W2.2,2,Security deposits
+W2.2,3,Utility deposits
+W2.2,4,Utility payments
+W2.2,7,Mortgage assistance
+W3,1,Applied; decision pending
+W3,2,Applied; client not eligible
+W3,3,Client did not apply
+W3,4,Insurance type not applicable for this client
+W3,8,Client doesn’t know
+W3,9,Client prefers not to answer
+W3,99,Data not collected
+W4.3,0,Not available
+W4.3,1,Available
+W4.3,2,Undetectable
+W4.3,8,Client doesn’t know
+W4.3,9,Client prefers not to answer
+W4.3,99,Data not collected
+W4.B,1,Medical Report
+W4.B,2,Client Report
+W4.B,3,Other
+W5.1,1,Able to maintain the housing they had at project entry
+W5.1,10,Deceased
+W5.1,2,Moved to new housing unit
+W5.1,3,Moved in with family/friends on a temporary basis
+W5.1,4,Moved in with family/friends on a permanent basis
+W5.1,5,Moved to a transitional or temporary housing facility or program
+W5.1,6,Client became homeless – moving to a shelter or other place unfit for human habitation
+W5.1,7,Jail/prison
+W5.1,8,Client doesn’t know
+W5.1,9,Client prefers not to answer
+W5.1,99,Data not collected
+W5.AB,1 ,Without a subsidy 
+W5.AB,2 ,With the subsidy they had at project entry 
+W5.AB,3 ,With an on-going subsidy acquired since project entry 
+W5.AB,4 ,But only with other financial assistance 
+W5.AB,11 ,With on-going subsidy 
+W5.AB,12 ,Without an on-going subsidy 
