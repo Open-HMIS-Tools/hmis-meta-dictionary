@@ -46,37 +46,22 @@ class HERDPainter:
             f.write(erd_markup)
 
 
+OUTPUT_DIR = "./hmis_diagrams"
+
 client_centered_erd = HERDPainter(
     "Client Centered",
     [
-        "Funder",
-        "IncomeBenefits",
-        "HealthAndDV",
-        "CEParticipation",
-        "AssessmentResults",
-        "Enrollment",
-        "Exit",
-        "Assessment",
-        "Export",
-        "YouthEducationStatus",
-        "ProjectCoC",
-        "EmploymentEducation",
-        "User",
-        "HMISParticipation",
-        "Organization",
-        "Services",
-        "Inventory",
-        "Event",
-        "AssessmentQuestions",
-        "Affiliation",
-        "CurrentLivingSituation",
         "Client",
+        "Enrollment",
         "Project",
-        "Disabilities",
+        "Household",
+        "User",
+        "Organization",
+        "ProjectCoC",
     ],
     ["Export"],
 )
-client_centered_erd.write("./hmis_diagrams")
+client_centered_erd.write(OUTPUT_DIR)
 
 """
 'Funder',
@@ -108,3 +93,37 @@ client_centered_erd.write("./hmis_diagrams")
 # project_centered_erd = HERDPainter(
 #     "Project Centered"
 # )
+
+
+all_csvs = HERDPainter(
+    "All CSVs",
+    [
+        "Funder",
+        "IncomeBenefits",
+        "HealthAndDV",
+        "CEParticipation",
+        "AssessmentResults",
+        "Enrollment",
+        "Exit",
+        "Assessment",
+        "Export",
+        "YouthEducationStatus",
+        "ProjectCoC",
+        "EmploymentEducation",
+        "User",
+        "HMISParticipation",
+        "Organization",
+        "Services",
+        "Inventory",
+        "Event",
+        "AssessmentQuestions",
+        "Affiliation",
+        "CurrentLivingSituation",
+        "Client",
+        "Project",
+        "Disabilities",
+    ],
+    ["Export"],
+)
+
+all_csvs.write(OUTPUT_DIR)
