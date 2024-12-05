@@ -1,5 +1,7 @@
 from .hmis_models import HMISField
 
+from rich import print
+
 
 class FocusedERD:
     def __init__(
@@ -50,20 +52,8 @@ class FocusedERD:
         table_string = f"    {table_name} {{\n"
 
         for field in fields:
-            table_string += f"         {field.type} {field.name} {'?' if field.is_nullable() else ''}\n"
+            table_string += f"         {field.type} {field.name}\n"
 
         table_string += "    }\n"
 
         return table_string
-
-
-class FocusedERDWriter:
-
-    def __init__(self, erds: list[FocusedERD]):
-        self.erds = erds
-
-    def write(self, output_path: str) -> None:
-
-        for erd in self.erds:
-            erd_str = erd.generate()
-            print(erd_str)

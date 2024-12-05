@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "metadictionary_tools"
+name = "meta_dictionary_tools"
 version = "0.0.1"
 description = "The HMIS Data Dictionary, CSV Specifications, SPMs, PIT, HIC, and assorted other guiding documents influencing the HMIS data structure and standardization."
 authors = ["C. Thomas Brittain <cthomasbrittain@hotmail.com>"]

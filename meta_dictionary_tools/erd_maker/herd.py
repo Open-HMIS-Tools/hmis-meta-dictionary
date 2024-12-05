@@ -1,5 +1,5 @@
-from metadictionary_tools.hmis_mermaid_maker import FocusedERD
-from metadictionary_tools.hmis_models import HMISFields
+from .hmis_mermaid_maker import FocusedERD
+from .hmis_models import HMISFields
 
 
 class HERDPainter:
@@ -26,9 +26,7 @@ class HERDPainter:
         ]
         fk_fields = [field for field in filtered_fields if field.is_foreign_key()]
 
-        erd_markup = FocusedERD(
-            "Client Centered", fk_fields, self.csvs_to_exclude
-        ).generate()
+        erd_markup = FocusedERD(name, filtered_fields, self.csvs_to_exclude).generate()
 
         if as_markdown:
             erd_markup = "```mermaid\n" + erd_markup + "\n```"

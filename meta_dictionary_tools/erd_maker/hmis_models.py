@@ -1,4 +1,8 @@
+from rich import print
+
+
 from dataclasses import dataclass
+
 from pathlib import Path
 import os
 import pandas as pd
@@ -53,7 +57,7 @@ class HMISFields:
     def load(cls) -> list[HMISField]:
 
         HMIS_DATA_DICTIONARY_PATH = Path(os.path.dirname(__file__)) / Path(
-            "data/hmis_data_dictionary.csv"
+            "../data/hmis_data_dictionary.csv"
         )
 
         df = pd.read_csv(HMIS_DATA_DICTIONARY_PATH)

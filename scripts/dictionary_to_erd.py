@@ -1,11 +1,11 @@
 from rich import print
 
-from metadictionary_tools.herd import HERDPainter
-from metadictionary_tools import ALL_CSV_NAMES
+from meta_dictionary_tools.erd_maker import HERDPainter
+from meta_dictionary_tools.erd_maker import ALL_CSV_NAMES
 
 print(ALL_CSV_NAMES)
 
-OUTPUT_DIR = "./hmis_diagrams"
+OUTPUT_DIR = "./documentation/hmis_diagrams"
 
 client_centered_erd = HERDPainter(
     "Client Centered",
