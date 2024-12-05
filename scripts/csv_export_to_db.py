@@ -5,9 +5,17 @@
 4. Ensure correct data type.
 """
 
-from meta_dictionary_tools.csv_loader import RetrieveSampleData, CSVExportLoader
+from meta_dictionary_tools.csv.csv_tools import CSVExportLoader, CSVTools
 
 OUTPUT_DIR = "data/hmis_csv_sample_data"
-RetrieveSampleData(download_directory=OUTPUT_DIR)
+
+"""
+Download sample data from LSA Sample Code repository
+https://github.com/HMIS/LSASampleCode
+"""
+CSVTools.retrieve_sample_data(download_directory=OUTPUT_DIR)
+
+# Ensure all CSVs exist
+CSVTools.create_missing_csvs(csv_export_dir=OUTPUT_DIR)
 
 csv_export_loader = CSVExportLoader(csv_export_dir=OUTPUT_DIR)
