@@ -6,42 +6,111 @@ from zipfile import ZipFile
 from io import BytesIO
 import polars as pl
 from rich import print
+import psycopg2
+
 
 from meta_dictionary_tools import HMIS_SAMPLE_DATA_URL
-from meta_dictionary_tools.data import ALL_CSV_NAMES
-from meta_dictionary_tools.data.models import FIELD_LOOKUP
+from meta_dictionary_tools.data import ALL_CSV_NAMES, FIELD_LOOKUP
 from meta_dictionary_tools.data_checks import all_csvs_exist
 
 
+class Database:
+    pass
+
+
 @dataclass
-class DatabaseConfig:
+class PostgresDatabaseConfig(Database):
+    """
+    Postgres Database Configuration.
+
+    Args:
+        username (str): Database username.
+        password (str): Database password.
+        db_name (str): Database name.
+        schema (str, optional): Database schema. Defaults to "hmis_csv".
+        db_type (str, optional): Database type. Defaults to "postgresql".
+        port (int, optional): Database port. Defaults to 5432.
+        server (str, optional): Database server. Defaults to "localhost".
+        uri (str, optional): Database URI. Defaults to None.
+
+    Returns:
+        None
+
+    """
+
     username: str
     password: str
     db_name: str
+    schema: str = "hmis_csv"
+    # TODO: Change to an enum.
     db_type = "postgresql"
     port: int = 5432
     server: str = "localhost"
-    uri: str = None
 
-    def __post_init__(self):
-        self.uri = f"{self.db_type}://{self.username}:{self.password}@{self.server}:{self.port}/{self.db_name}"
+    def uri(self):
+        return f"{self.db_type}://{self.username}:{self.password}@{self.server}:{self.port}/{self.db_name}"
 
 
-class CSVExportLoader:
+class HMIS_DBLoader:
     """
-    WILO: Load CSVs into a database. I'll probably need to ensure the datatypes
-         are correct.
+    Load CSVs into a database.
+
+    Args:
+        csv_export_dir (str): Directory where the CSVs are stored.
+        db_config (PostgresDatabaseConfig): Database configuration.
+
+    Returns:
+        None
     """
 
-    def __init__(self, csv_export_dir: str, db_config: DatabaseConfig) -> None:
+    def __init__(self, csv_export_dir: str, db_config: PostgresDatabaseConfig) -> None:
 
         self.csv_export_dir = csv_export_dir
         self.csv_files = glob(f"{csv_export_dir}/*.csv")
+        self.db_config = db_config
 
         all_csvs_exist(self.csv_files)
 
-        query = """SELECT * FROM lsa_raw_hmis_csv."Affiliation" """
-        print(pl.read_database_uri(query=query, uri=db_config.uri))
+        with psycopg2.connect(self.db_config.uri()) as conn:
+            with conn.cursor() as cur:
+                cur.execute(f"CREATE SCHEMA IF NOT EXISTS {self.db_config.schema};")
+
+    def load_csvs(
+        self,
+    ) -> None:
+        """
+        Load CSVs into the database.
+
+        Returns:
+            None
+        """
+
+        for csv_file in self.csv_files:
+            table_name = Path(csv_file).stem
+            print(
+                f"Loading [purple]{self.db_config.schema}.{table_name}[/purple] into the database."
+            )
+            self.load_csv(csv_file, table_name)
+
+    def load_csv(self, csv_file: str, table_name: str) -> None:
+        """
+        Load a single CSV into the database.
+
+        Args:
+            csv_file (str): Path to the CSV file.
+            table_name (str): Name of the table to create in the database.
+
+        Returns:
+            None
+        """
+        df = pl.read_csv(csv_file)
+        table_name = f'{self.db_config.schema}."{table_name}"'
+
+        df.write_database(
+            connection=self.db_config.uri(),
+            table_name=table_name,
+            if_table_exists="replace",
+        )
 
 
 class CSVTools:
@@ -100,3 +169,20 @@ class CSVTools:
             raise Exception(
                 f"Failed to download sample data from '{HMIS_SAMPLE_DATA_URL}'"
             )
+
+
+class HMIS_CSVDecoder:
+    """
+    Convert all encoded values in the HMIS CSV sets, into a human
+    readable counterpart.
+    """
+
+    pass
+
+
+class OneBigCSV:
+    """
+    Join all of the HMIS CSV appropriately, into one big CSV.
+    """
+
+    pass
