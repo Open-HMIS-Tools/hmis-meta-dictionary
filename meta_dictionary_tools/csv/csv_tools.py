@@ -1,11 +1,10 @@
+import requests
 from dataclasses import dataclass
 from pathlib import Path
 from glob import glob
-import requests
 from zipfile import ZipFile
 from io import BytesIO
 import polars as pl
-from glob import glob
 from rich import print
 
 from meta_dictionary_tools import HMIS_SAMPLE_DATA_URL
@@ -29,6 +28,10 @@ class DatabaseConfig:
 
 
 class CSVExportLoader:
+    """
+    WILO: Load CSVs into a database. I'll probably need to ensure the datatypes
+         are correct.
+    """
 
     def __init__(self, csv_export_dir: str, db_config: DatabaseConfig) -> None:
 
