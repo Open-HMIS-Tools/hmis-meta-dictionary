@@ -16,6 +16,8 @@ marker-pdf = "^1.0.2"
 pandas = "^2.2.3"
 polars = "^1.16.0"
 stringcase = "^1.2.0"
+connectorx = "^0.4.0"
+pyarrow = "^18.1.0"
 
 [build-system]
 requires = ["poetry-core"]

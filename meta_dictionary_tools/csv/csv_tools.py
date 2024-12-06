@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from pathlib import Path
 from glob import glob
 import requests
@@ -13,13 +14,31 @@ from meta_dictionary_tools.data.models import FIELD_LOOKUP
 from meta_dictionary_tools.data_checks import all_csvs_exist
 
 
+@dataclass
+class DatabaseConfig:
+    username: str
+    password: str
+    db_name: str
+    db_type = "postgresql"
+    port: int = 5432
+    server: str = "localhost"
+    uri: str = None
+
+    def __post_init__(self):
+        self.uri = f"{self.db_type}://{self.username}:{self.password}@{self.server}:{self.port}/{self.db_name}"
+
+
 class CSVExportLoader:
 
-    def __init__(self, csv_export_dir: str):
+    def __init__(self, csv_export_dir: str, db_config: DatabaseConfig) -> None:
+
         self.csv_export_dir = csv_export_dir
         self.csv_files = glob(f"{csv_export_dir}/*.csv")
 
         all_csvs_exist(self.csv_files)
+
+        query = """SELECT * FROM lsa_raw_hmis_csv."Affiliation" """
+        print(pl.read_database_uri(query=query, uri=db_config.uri))
 
 
 class CSVTools:

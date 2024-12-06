@@ -6,7 +6,11 @@
 """
 
 import os
-from meta_dictionary_tools.csv.csv_tools import CSVExportLoader, CSVTools
+from meta_dictionary_tools.csv.csv_tools import (
+    CSVExportLoader,
+    CSVTools,
+    DatabaseConfig,
+)
 
 OUTPUT_DIR = "data/hmis_csv_sample_data"
 
@@ -21,4 +25,13 @@ CSVTools.retrieve_sample_data(download_directory=OUTPUT_DIR)
 # Ensure all CSVs exist
 CSVTools.create_missing_csvs(csv_export_dir=OUTPUT_DIR)
 
-csv_export_loader = CSVExportLoader(csv_export_dir=OUTPUT_DIR)
+csv_export_loader = CSVExportLoader(
+    csv_export_dir=OUTPUT_DIR,
+    db_config=DatabaseConfig(
+        db_name="analytics",
+        username="ladvien",
+        password="",
+        server="localhost",
+        port=5432,
+    ),
+)
