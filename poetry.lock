@@ -2218,6 +2218,16 @@ files = [
 ]
 
 [[package]]
+name = "stringcase"
+version = "1.2.0"
+description = "String case converter."
+optional = false
+python-versions = "*"
+files = [
+    {file = "stringcase-1.2.0.tar.gz", hash = "sha256:48a06980661908efe8d9d34eab2b6c13aefa2163b3ced26972902e3bdfd87008"},
+]
+
+[[package]]
 name = "surya-ocr"
 version = "0.7.0"
 description = "OCR, layout, reading order, and table recognition in 90+ languages"
@@ -2672,4 +2682,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "ed2e4f3475555baf69982774d698291eb1cc58f9a269febd6287d32550129c1a"
+content-hash = "9ab04e9f1b57bb42cfd0e5f20ac0820f1b27b567694532d19d7e7f3a662499b0"

@@ -1,9 +1,6 @@
 from rich import print
 
 from meta_dictionary_tools.erd_maker import HERDPainter
-from meta_dictionary_tools.erd_maker import ALL_CSV_NAMES
-
-print(ALL_CSV_NAMES)
 
 OUTPUT_DIR = "./documentation/hmis_diagrams"
 

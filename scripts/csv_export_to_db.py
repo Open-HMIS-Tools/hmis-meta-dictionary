@@ -5,9 +5,12 @@
 4. Ensure correct data type.
 """
 
+import os
 from meta_dictionary_tools.csv.csv_tools import CSVExportLoader, CSVTools
 
 OUTPUT_DIR = "data/hmis_csv_sample_data"
+
+os.system(f"rm -rf {OUTPUT_DIR}")
 
 """
 Download sample data from LSA Sample Code repository

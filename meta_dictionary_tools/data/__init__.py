@@ -23,5 +23,4 @@ ALL_CSV_NAMES = [
     "Client",
     "Project",
     "Disabilities",
-    "Export",
 ]

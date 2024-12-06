@@ -1,17 +1,14 @@
 ```mermaid
 erDiagram
-    Assessment {
-         S32 AssessmentID
-         S32 EnrollmentID
-         S32 PersonalID
-         D AssessmentDate
-         S250 AssessmentLocation
-         I AssessmentType
-         I AssessmentLevel
-         I PrioritizationStatus
+    User {
+         S32 UserID
+         S50 UserFirstName
+         S50 UserLastName
+         S10 UserPhone
+         S5 UserExtension
+         S320 UserEmail
          T DateCreated
          T DateUpdated
-         S32 UserID
          T DateDeleted
          S32 ExportID
     }
@@ -39,61 +36,16 @@ erDiagram
          T DateDeleted
          S32 ExportID
     }
-    Services {
-         S32 ServicesID
-         S32 EnrollmentID
-         S32 PersonalID
-         D DateProvided
-         I RecordType
-         I TypeProvided
-         S50 OtherTypeProvided
-         S50 OtherTypeProvided
-         S50 MovingOnOtherType
-         I SubTypeProvided
-         I SubTypeProvided
-         I SubTypeProvided
-         M FAAmount
-         M FAAmount
-         D FAStartDate
-         D FAEndDate
-         I ReferralOutcome
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    Organization {
-         S32  OrganizationID
-         S200  OrganizationName
-         I  VictimServiceProvider
-         S200  OrganizationCommonName
-         T  DateCreated
-         T  DateUpdated
-         S32  UserID
-         T  DateDeleted
-         S32  ExportID
-    }
-    HMISParticipation {
-         S32 HMISParticipationID
-         S32 ProjectID
-         I HMISParticipationType
-         D HMISParticipationStatusStartDate
-         D HMISParticipationStatusEndDate
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S ExportID
-    }
-    YouthEducationStatus {
-         S32 YouthEducationStatusID
+    EmploymentEducation {
+         S32 EmploymentEducationID
          S32 EnrollmentID
          S32 PersonalID
          D InformationDate
-         I CurrentSchoolAttend
-         I MostRecentEdStatus
-         I CurrentEdStatus
+         I LastGradeCompleted
+         I SchoolStatus
+         I Employed
+         I EmploymentType
+         I NotEmployedReason
          I DataCollectionStage
          T DateCreated
          T DateUpdated
@@ -101,68 +53,20 @@ erDiagram
          T DateDeleted
          S32 ExportID
     }
-    Funder {
-         S32 FunderID
-         S32 ProjectID
-         I Funder
-         S100 OtherFunder
-         S100 GrantID
-         D StartDate
-         D EndDate
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    Disabilities {
-         S32 DisabilitiesID
+    CurrentLivingSituation {
+         S32 CurrentLivingSitID
          S32 EnrollmentID
          S32 PersonalID
          D InformationDate
-         I DisabilityType
-         I DisabilityResponse
-         I IndefiniteAndImpairs
-         I TCellCountAvailable
-         I TCellCount
-         I TCellSource
-         I ViralLoadAvailable
-         I ViralLoad
-         I ViralLoadSource
-         I AntiRetroviral
-         I DataCollectionStage
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    User {
-         S32 UserID
-         S50 UserFirstName
-         S50 UserLastName
-         S10 UserPhone
-         S5 UserExtension
-         S320 UserEmail
-         T DateCreated
-         T DateUpdated
-         T DateDeleted
-         S32 ExportID
-    }
-    HealthAndDV {
-         S32 HealthAndDVID
-         S32 EnrollmentID
-         S32 PersonalID
-         D InformationDate
-         I DomesticViolenceSurvivor
-         I WhenOccurred
-         I CurrentlyFleeing
-         I GeneralHealthStatus
-         I DentalHealthStatus
-         I MentalHealthStatus
-         I PregnancyStatus
-         D DueDate
-         I DataCollectionStage
+         I CurrentLivingSituation
+         I CLSSubsidyType
+         S100 VerifiedBy
+         I LeaveSituation14Days
+         I SubsequentResidence
+         I ResourcesToObtain
+         I LeaseOwn60Day
+         I MovedTwoOrMore
+         S250 LocationDetails
          T DateCreated
          T DateUpdated
          S32 UserID
@@ -216,237 +120,15 @@ erDiagram
          T DateDeleted
          S32 ExportID
     }
-    Enrollment {
-         S32 EnrollmentID
-         S32 PersonalID
-         S32 ProjectID
-         D EntryDate
-         S32 HouseholdID
-         I RelationshipToHoH
-         S6 EnrollmentCoC
-         I LivingSituation
-         I RentalSubsidyType
-         I LengthOfStay
-         I LOSUnderThreshold
-         I LOSUnderThreshold
-         I PreviousStreetESSH
-         D DateToStreetESSH
-         I TimesHomelessPastThreeYears
-         I MonthsHomelessPastThreeYears
-         I DisablingCondition
-         D DateOfEngagement
-         D MoveInDate
-         D DateOfPATHStatus
-         I ClientEnrolledInPATH
-         I ReasonNotEnrolled
-         I PercentAMI
-         I ReferralSource
-         I CountOutreachReferralApproaches
-         D DateOfBCPStatus
-         I EligibleForRHY
-         I ReasonNoServices
-         I RunawayYouth
-         I SexualOrientation
-         S100 SexualOrientationOther
-         I FormerWardChildWelfare
-         I ChildWelfareYears
-         I ChildWelfareMonths
-         I FormerWardJuvenileJustice
-         I JuvenileJusticeYears
-         I JuvenileJusticeMonths
-         I UnemploymentFam
-         I MentalHealthDisorderFam
-         I PhysicalDisabilityFam
-         I AlcoholDrugUseDisorderFam
-         I InsufficientIncome
-         I IncarceratedParent
-         S5 VAMCStation
-         I TargetScreenReqd
-         I TimeToHousingLoss
-         I AnnualPercentAMI
-         I LiteralHomelessHistory
-         I ClientLeaseholder
-         I HOHLeaseholder
-         I SubsidyAtRisk
-         I EvictionHistory
-         I CriminalRecord
-         I IncarceratedAdult
-         I PrisonDischarge
-         I SexOffender
-         I DisabledHoH
-         I CurrentPregnant
-         I SingleParent
-         I DependentUnder6
-         I HH5Plus
-         I CoCPrioritized
-         I HPScreeningScore
-         I ThresholdScore
-         I TranslationNeeded
-         I PreferredLanguage
-         S100 PreferredLanguageDifferent
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    Event {
-         S32 EventID
-         S32 EnrollmentID
-         S32 PersonalID
-         D EventDate
-         I Event
-         I ProbSolDivRRResult
-         I ReferralCaseManageAfter
-         S250 LocationCrisisOrPHHousing
-         I ReferralResult
-         D ResultDate
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    ProjectCoC {
-         S32 ProjectCoCID
-         S32 ProjectID
-         S6 CoCCode
-         S6 Geocode[1]
-         S100 Address1
-         S100 Address2
-         S50 City
-         S2 State
-         S5 ZIP
-         I GeographyType
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    Affiliation {
-         S32 AffiliationID
-         S32 ProjectID
-         S32 ResProjectID
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S ExportID
-    }
-    Project {
-         S32 ProjectID
-         S32 OrganizationID
-         S200 ProjectName
-         S200 ProjectCommonName
-         D OperatingStartDate
-         D OperatingEndDate
-         I ContinuumProject
-         I ProjectType
-         I HousingType
-         I RRHSubType
-         I ResidentialAffiliation
-         I TargetPopulation
-         I HOPWAMedAssistedLivingFac
-         I PITCount
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    CurrentLivingSituation {
-         S32 CurrentLivingSitID
-         S32 EnrollmentID
-         S32 PersonalID
-         D InformationDate
-         I CurrentLivingSituation
-         I CLSSubsidyType
-         S100 VerifiedBy
-         I LeaveSituation14Days
-         I SubsequentResidence
-         I ResourcesToObtain
-         I LeaseOwn60Day
-         I MovedTwoOrMore
-         S250 LocationDetails
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    EmploymentEducation {
-         S32 EmploymentEducationID
-         S32 EnrollmentID
-         S32 PersonalID
-         D InformationDate
-         I LastGradeCompleted
-         I SchoolStatus
-         I Employed
-         I EmploymentType
-         I NotEmployedReason
-         I DataCollectionStage
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    Client {
-         S32 PersonalID
-         S50 FirstName
-         S50 MiddleName
-         S50 LastName
-         S50 NameSuffix
-         I NameDataQuality
-         S9 SSN[1]
-         I SSNDataQuality
-         D DOB
-         I DOBDataQuality
-         I AmIndAKNative
-         I Asian
-         I BlackAfAmerican
-         I HispanicLatinaeo
-         I MidEastNAfrican
-         I NativeHIPacific
-         I White
-         I RaceNone
-         S100 AdditionalRaceEthnicity
-         I Woman
-         I Man
-         I NonBinary
-         I CulturallySpecific
-         I Transgender
-         I Questioning
-         I DifferentIdentity
-         I GenderNone
-         S100 DifferentIdentityText
-         I VeteranStatus
-         I YearEnteredService
-         I YearSeparated
-         I WorldWarII
-         I KoreanWar
-         I VietnamWar
-         I DesertStorm
-         I AfghanistanOEF
-         I IraqOIF
-         I IraqOND
-         I OtherTheater
-         I MilitaryBranch
-         I DischargeStatus
-         T DateCreated
-         T DateUpdated
-         S32 UserID
-         T DateDeleted
-         S32 ExportID
-    }
-    AssessmentResults {
-         S32 AssessmentResultID
+    AssessmentQuestions {
+         S32 AssessmentQuestionID
          S32 AssessmentID
          S32 EnrollmentID
          S32 PersonalID
-         S250 AssessmentResultType
-         S250 AssessmentResult
+         S250 AssessmentQuestionGroup
+         I AssessmentQuestionOrder
+         S250 AssessmentQuestion
+         S500 AssessmentAnswer
          T DateCreated
          T DateUpdated
          S32 UserID
@@ -532,6 +214,309 @@ erDiagram
          T DateDeleted
          S32 ExportID
     }
+    Client {
+         S32 PersonalID
+         S50 FirstName
+         S50 MiddleName
+         S50 LastName
+         S50 NameSuffix
+         I NameDataQuality
+         S9 SSN[1]
+         I SSNDataQuality
+         D DOB
+         I DOBDataQuality
+         I AmIndAKNative
+         I Asian
+         I BlackAfAmerican
+         I HispanicLatinaeo
+         I MidEastNAfrican
+         I NativeHIPacific
+         I White
+         I RaceNone
+         S100 AdditionalRaceEthnicity
+         I Woman
+         I Man
+         I NonBinary
+         I CulturallySpecific
+         I Transgender
+         I Questioning
+         I DifferentIdentity
+         I GenderNone
+         S100 DifferentIdentityText
+         I VeteranStatus
+         I YearEnteredService
+         I YearSeparated
+         I WorldWarII
+         I KoreanWar
+         I VietnamWar
+         I DesertStorm
+         I AfghanistanOEF
+         I IraqOIF
+         I IraqOND
+         I OtherTheater
+         I MilitaryBranch
+         I DischargeStatus
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    HMISParticipation {
+         S32 HMISParticipationID
+         S32 ProjectID
+         I HMISParticipationType
+         D HMISParticipationStatusStartDate
+         D HMISParticipationStatusEndDate
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S ExportID
+    }
+    YouthEducationStatus {
+         S32 YouthEducationStatusID
+         S32 EnrollmentID
+         S32 PersonalID
+         D InformationDate
+         I CurrentSchoolAttend
+         I MostRecentEdStatus
+         I CurrentEdStatus
+         I DataCollectionStage
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    Funder {
+         S32 FunderID
+         S32 ProjectID
+         I Funder
+         S100 OtherFunder
+         S100 GrantID
+         D StartDate
+         D EndDate
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    Services {
+         S32 ServicesID
+         S32 EnrollmentID
+         S32 PersonalID
+         D DateProvided
+         I RecordType
+         I TypeProvided
+         S50 OtherTypeProvided
+         S50 OtherTypeProvided
+         S50 MovingOnOtherType
+         I SubTypeProvided
+         I SubTypeProvided
+         I SubTypeProvided
+         M FAAmount
+         M FAAmount
+         D FAStartDate
+         D FAEndDate
+         I ReferralOutcome
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    Event {
+         S32 EventID
+         S32 EnrollmentID
+         S32 PersonalID
+         D EventDate
+         I Event
+         I ProbSolDivRRResult
+         I ReferralCaseManageAfter
+         S250 LocationCrisisOrPHHousing
+         I ReferralResult
+         D ResultDate
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    Enrollment {
+         S32 EnrollmentID
+         S32 PersonalID
+         S32 ProjectID
+         D EntryDate
+         S32 HouseholdID
+         I RelationshipToHoH
+         S6 EnrollmentCoC
+         I LivingSituation
+         I RentalSubsidyType
+         I LengthOfStay
+         I LOSUnderThreshold
+         I LOSUnderThreshold
+         I PreviousStreetESSH
+         D DateToStreetESSH
+         I TimesHomelessPastThreeYears
+         I MonthsHomelessPastThreeYears
+         I DisablingCondition
+         D DateOfEngagement
+         D MoveInDate
+         D DateOfPATHStatus
+         I ClientEnrolledInPATH
+         I ReasonNotEnrolled
+         I PercentAMI
+         I ReferralSource
+         I CountOutreachReferralApproaches
+         D DateOfBCPStatus
+         I EligibleForRHY
+         I ReasonNoServices
+         I RunawayYouth
+         I SexualOrientation
+         S100 SexualOrientationOther
+         I FormerWardChildWelfare
+         I ChildWelfareYears
+         I ChildWelfareMonths
+         I FormerWardJuvenileJustice
+         I JuvenileJusticeYears
+         I JuvenileJusticeMonths
+         I UnemploymentFam
+         I MentalHealthDisorderFam
+         I PhysicalDisabilityFam
+         I AlcoholDrugUseDisorderFam
+         I InsufficientIncome
+         I IncarceratedParent
+         S5 VAMCStation
+         I TargetScreenReqd
+         I TimeToHousingLoss
+         I AnnualPercentAMI
+         I LiteralHomelessHistory
+         I ClientLeaseholder
+         I HOHLeaseholder
+         I SubsidyAtRisk
+         I EvictionHistory
+         I CriminalRecord
+         I IncarceratedAdult
+         I PrisonDischarge
+         I SexOffender
+         I DisabledHoH
+         I CurrentPregnant
+         I SingleParent
+         I DependentUnder6
+         I HH5Plus
+         I CoCPrioritized
+         I HPScreeningScore
+         I ThresholdScore
+         I TranslationNeeded
+         I PreferredLanguage
+         S100 PreferredLanguageDifferent
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    Organization {
+         S32  OrganizationID
+         S200  OrganizationName
+         I  VictimServiceProvider
+         S200  OrganizationCommonName
+         T  DateCreated
+         T  DateUpdated
+         S32  UserID
+         T  DateDeleted
+         S32  ExportID
+    }
+    Project {
+         S32 ProjectID
+         S32 OrganizationID
+         S200 ProjectName
+         S200 ProjectCommonName
+         D OperatingStartDate
+         D OperatingEndDate
+         I ContinuumProject
+         I ProjectType
+         I HousingType
+         I RRHSubType
+         I ResidentialAffiliation
+         I TargetPopulation
+         I HOPWAMedAssistedLivingFac
+         I PITCount
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    HealthAndDV {
+         S32 HealthAndDVID
+         S32 EnrollmentID
+         S32 PersonalID
+         D InformationDate
+         I DomesticViolenceSurvivor
+         I WhenOccurred
+         I CurrentlyFleeing
+         I GeneralHealthStatus
+         I DentalHealthStatus
+         I MentalHealthStatus
+         I PregnancyStatus
+         D DueDate
+         I DataCollectionStage
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    Affiliation {
+         S32 AffiliationID
+         S32 ProjectID
+         S32 ResProjectID
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S ExportID
+    }
+    Assessment {
+         S32 AssessmentID
+         S32 EnrollmentID
+         S32 PersonalID
+         D AssessmentDate
+         S250 AssessmentLocation
+         I AssessmentType
+         I AssessmentLevel
+         I PrioritizationStatus
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    Disabilities {
+         S32 DisabilitiesID
+         S32 EnrollmentID
+         S32 PersonalID
+         D InformationDate
+         I DisabilityType
+         I DisabilityResponse
+         I IndefiniteAndImpairs
+         I TCellCountAvailable
+         I TCellCount
+         I TCellSource
+         I ViralLoadAvailable
+         I ViralLoad
+         I ViralLoadSource
+         I AntiRetroviral
+         I DataCollectionStage
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
     CEParticipation {
          S32 CEParticipationID
          S32 ProjectID
@@ -549,15 +534,30 @@ erDiagram
          T DateDeleted
          S ExportID
     }
-    AssessmentQuestions {
-         S32 AssessmentQuestionID
+    AssessmentResults {
+         S32 AssessmentResultID
          S32 AssessmentID
          S32 EnrollmentID
          S32 PersonalID
-         S250 AssessmentQuestionGroup
-         I AssessmentQuestionOrder
-         S250 AssessmentQuestion
-         S500 AssessmentAnswer
+         S250 AssessmentResultType
+         S250 AssessmentResult
+         T DateCreated
+         T DateUpdated
+         S32 UserID
+         T DateDeleted
+         S32 ExportID
+    }
+    ProjectCoC {
+         S32 ProjectCoCID
+         S32 ProjectID
+         S6 CoCCode
+         S6 Geocode[1]
+         S100 Address1
+         S100 Address2
+         S50 City
+         S2 State
+         S5 ZIP
+         I GeographyType
          T DateCreated
          T DateUpdated
          S32 UserID
