@@ -171,6 +171,70 @@ class CSVTools:
             )
 
 
+class HMIS_CSVLoader:
+
+    def __init__(self, csv_export_dir: str):
+        self.csv_export_dir = csv_export_dir
+        self.csv_files = glob(f"{csv_export_dir}/*.csv")
+
+        CSVTools.create_missing_csvs(csv_export_dir)
+
+    def load_csvs(self):
+        """
+        Load all the CSVs into memory.
+
+        Returns:
+            None
+
+        CSVs loaded into memory:
+            'Affiliation',
+            'Assessment',
+            'AssessmentQuestions',
+            'AssessmentResults',
+            'CEParticipation',
+            'Client',
+            'CurrentLivingSituation',
+            'Disabilities',
+            'EmploymentEducation',
+            'Enrollment',
+            'Event',
+            'Exit',
+            'Export',
+            'Funder',
+            'HMISParticipation',
+            'HealthAndDV',
+            'IncomeBenefits',
+            'Inventory',
+            'Organization',
+            'Project',
+            'ProjectCoC',
+            'Services',
+            'User',
+            'YouthEducationStatus'
+        """
+
+        self.csvs = {}
+        for csv in ALL_CSV_NAMES:
+            csv_path = f"{self.csv_export_dir}/{csv}.csv"
+            self.csvs[csv] = pl.read_csv(csv_path)
+
+    def prepend_csv_name_to_column_name(self) -> dict:
+        """
+        Prepend the CSV name to the column name.
+
+        Returns:
+            None
+        """
+
+        new_csvs = {}
+        for csv_name, df in self.csvs.items():
+            new_csvs[csv_name] = df.rename(
+                {col: f"{csv_name}_{col}" for col in df.columns},
+            )
+
+        return new_csvs
+
+
 class HMIS_CSVDecoder:
     """
     Convert all encoded values in the HMIS CSV sets, into a human
@@ -180,9 +244,173 @@ class HMIS_CSVDecoder:
     pass
 
 
+@dataclass
+class JoinDefinition:
+    left_csv_name: str
+    right_csv_name: str
+    left_on: str
+    right_on: str
+
+
 class OneBigCSV:
     """
     Join all of the HMIS CSV appropriately, into one big CSV.
     """
 
-    pass
+    @staticmethod
+    def load(
+        csv_loader: HMIS_CSVLoader, csvs_to_exclude: list[str] | None = None
+    ) -> pl.DataFrame:
+
+        csv_loader.load_csvs()
+        csv_loader.csvs = csv_loader.prepend_csv_name_to_column_name()
+
+        join_keys = [
+            # Enrollments
+            JoinDefinition(
+                "Client", "Enrollment", "Client_PersonalID", "Enrollment_PersonalID"
+            ),
+            # Exits
+            # JoinDefinition("Client", "Exit", "Client_PersonalID", "Exit_PersonalID"),
+            # Projects
+            JoinDefinition(
+                "Enrollment", "Project", "Enrollment_ProjectID", "Project_ProjectID"
+            ),
+            # Organizations
+            JoinDefinition(
+                "Project",
+                "Organization",
+                "Project_OrganizationID",
+                "Organization_OrganizationID",
+            ),
+            # Funder
+            JoinDefinition(
+                "Project", "Funder", "Project_ProjectID", "Funder_ProjectID"
+            ),
+            # Events
+            JoinDefinition(
+                "Enrollment", "Event", "Enrollment_EnrollmentID", "Event_EnrollmentID"
+            ),
+            # Current Living Situation
+            JoinDefinition(
+                "Enrollment",
+                "CurrentLivingSituation",
+                "Enrollment_EnrollmentID",
+                "CurrentLivingSituation_EnrollmentID",
+            ),
+            # Disabilities
+            JoinDefinition(
+                "Enrollment",
+                "Disabilities",
+                "Enrollment_EnrollmentID",
+                "Disabilities_EnrollmentID",
+            ),
+            # Income Benefits
+            JoinDefinition(
+                "Enrollment",
+                "IncomeBenefits",
+                "Enrollment_EnrollmentID",
+                "IncomeBenefits_EnrollmentID",
+            ),
+            # HealthAndDV
+            JoinDefinition(
+                "Enrollment",
+                "HealthAndDV",
+                "Enrollment_EnrollmentID",
+                "HealthAndDV_EnrollmentID",
+            ),
+            # 'YouthEducationStatus'
+            JoinDefinition(
+                "Enrollment",
+                "YouthEducationStatus",
+                "Enrollment_EnrollmentID",
+                "YouthEducationStatus_EnrollmentID",
+            ),
+            # Assessments
+            JoinDefinition(
+                "Client", "Assessment", "Client_PersonalID", "Assessment_PersonalID"
+            ),
+            # Assessment Results
+            JoinDefinition(
+                "Assessment",
+                "AssessmentResults",
+                "Assessment_AssessmentID",
+                "AssessmentResults_AssessmentID",
+            ),
+            # Assessment Questions
+            JoinDefinition(
+                "Assessment",
+                "AssessmentQuestions",
+                "Assessment_AssessmentID",
+                "AssessmentQuestions_AssessmentID",
+            ),
+            # Assessment Results
+            JoinDefinition(
+                "Assessment",
+                "AssessmentResults",
+                "Assessment_AssessmentID",
+                "AssessmentResults_AssessmentID",
+            ),
+            # CE Participation
+            JoinDefinition(
+                "Project",
+                "CEParticipation",
+                "Project_ProjectID",
+                "CEParticipation_ProjectID",
+            ),
+            # HMIS Participation
+            JoinDefinition(
+                "Project",
+                "HMISParticipation",
+                "Project_ProjectID",
+                "HMISParticipation_ProjectID",
+            ),
+            # Inventory
+            JoinDefinition(
+                "Project",
+                "Inventory",
+                "Project_ProjectID",
+                "Inventory_ProjectID",
+            ),
+            # Services
+            JoinDefinition(
+                "Enrollment",
+                "Services",
+                "Enrollment_EnrollmentID",
+                "Services_EnrollmentID",
+            ),
+            # EmploymentEducation
+            JoinDefinition(
+                "Enrollment",
+                "EmploymentEducation",
+                "Enrollment_EnrollmentID",
+                "EmploymentEducation_EnrollmentID",
+            ),
+            # Affiliation
+            JoinDefinition(
+                "Project", "Affiliation", "Project_ProjectID", "Affiliation_ProjectID"
+            ),
+        ]
+
+        if csvs_to_exclude:
+            join_keys = [
+                join_key
+                for join_key in join_keys
+                if join_key.right_csv_name not in csvs_to_exclude
+            ]
+
+        df: pl.DataFrame = csv_loader.csvs["Client"]
+        for join_key in join_keys:
+            right_df = csv_loader.csvs[join_key.right_csv_name]
+
+            df = df.join(
+                right_df,
+                left_on=join_key.left_on,
+                right_on=join_key.right_on,
+                how="full",
+            )
+        """
+            TODO 'User',
+        """
+
+        return df.write_csv("one_big_file.csv")
