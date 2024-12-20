@@ -244,14 +244,6 @@ class HMIS_CSVDecoder:
     pass
 
 
-@dataclass
-class JoinDefinition:
-    left_csv_name: str
-    right_csv_name: str
-    left_on: str
-    right_on: str
-
-
 class OneBigCSV:
     """
     Join all of the HMIS CSV appropriately, into one big CSV.

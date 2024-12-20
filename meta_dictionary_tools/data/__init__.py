@@ -25,6 +25,21 @@ ALL_CSV_NAMES = [
     "Disabilities",
 ]
 
+ALL_LSA_CSV_NAMES = [
+    "Affiliation",
+    "Funder",
+    "HMISParticipation",
+    "Inventory",
+    "LSACalculated",
+    "LSAExit",
+    "LSAHousehold",
+    "LSAPerson",
+    "LSAReport",
+    "Organization",
+    "Project",
+    "ProjectCoC",
+]
+
 FUNDER_FIELDS = [
     "FunderID",
     "ProjectID",
