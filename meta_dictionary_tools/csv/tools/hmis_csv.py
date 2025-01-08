@@ -10,6 +10,7 @@ import psycopg2
 
 
 from meta_dictionary_tools import HMIS_SAMPLE_DATA_URL
+from meta_dictionary_tools.csv.models import JoinDefinition
 from meta_dictionary_tools.data import ALL_CSV_NAMES, FIELD_LOOKUP
 from meta_dictionary_tools.data_checks import all_csvs_exist
 
@@ -127,8 +128,13 @@ class CSVTools:
         Returns:
             None
         """
+        if not Path(csv_export_dir).exists():
+            raise Exception(f"Directory '{csv_export_dir}' does not exist")
+
         csv_files = glob(f"{csv_export_dir}/*.csv")
-        csv_files = [Path(csv_file).stem for csv_file in csv_files]
+
+        if not csv_files:
+            raise Exception(f"No CSV files found in '{csv_export_dir}'")
 
         for csv_name in ALL_CSV_NAMES:
             if csv_name not in csv_files:

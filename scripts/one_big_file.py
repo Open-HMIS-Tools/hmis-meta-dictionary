@@ -1,12 +1,10 @@
-from meta_dictionary_tools.csv.csv_tools import (
-    HMIS_CSVLoader,
-    OneBigCSV,
-)
-from meta_dictionary_tools.csv.lsa_csv_tools import LSA_HMIS_CSVLoader, OneBigLSACSV
+from meta_dictionary_tools.csv.tools import HMIS_CSVLoader
+from meta_dictionary_tools.csv.tools import OneBigCSV
 
-OUTPUT_DIR = "<TEST>"
+
+OUTPUT_DIR = "data/hmis_csv_sample_data"
 
 csvs_to_exclude = ["Services"]
 
-csv_loader = LSA_HMIS_CSVLoader(OUTPUT_DIR)
-df = OneBigLSACSV.load(csv_loader, csvs_to_exclude)
+csv_loader = HMIS_CSVLoader(OUTPUT_DIR)
+df = OneBigCSV.load(csv_loader, csvs_to_exclude)

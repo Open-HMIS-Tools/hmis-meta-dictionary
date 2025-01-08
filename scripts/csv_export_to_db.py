@@ -6,7 +6,7 @@
 """
 
 import os
-from meta_dictionary_tools.csv.csv_tools import (
+from meta_dictionary_tools.csv.tools.hmis_csv import (
     HMIS_DBLoader,
     CSVTools,
     PostgresDatabaseConfig,

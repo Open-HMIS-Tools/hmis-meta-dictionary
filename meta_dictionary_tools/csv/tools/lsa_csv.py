@@ -8,7 +8,6 @@ import polars as pl
 from rich import print
 import psycopg2
 
-
 from meta_dictionary_tools import HMIS_SAMPLE_DATA_URL
 from meta_dictionary_tools.csv.models import JoinDefinition
 from meta_dictionary_tools.data import ALL_CSV_NAMES, ALL_LSA_CSV_NAMES, FIELD_LOOKUP
@@ -23,7 +22,7 @@ class LSA_HMIS_CSVLoader:
 
         # TODO: When loading empty shell files the datatypes are not set.
         # causing the join to fail. Need to fix this.
-        # CSVTools.create_missing_lsa_csvs(csv_export_dir)
+        LSA_CSVTools.create_missing_csvs(csv_export_dir)
 
     def load_csvs(self):
         self.csvs = {}
@@ -46,6 +45,72 @@ class LSA_HMIS_CSVLoader:
             )
 
         return new_csvs
+
+
+class LSA_CSVTools:
+
+    @staticmethod
+    def create_missing_csvs(csv_export_dir: str) -> None:
+        """
+        Create empty csv files in the csv_export_dir for any missing csv files.
+        Each CSV shell will contain the appropriate columns, but no data.
+
+        Args:
+            csv_export_dir (str): Directory where the csv files are stored.
+
+        Returns:
+            None
+        """
+
+        if not Path(csv_export_dir).exists():
+            raise Exception(f"Directory '{csv_export_dir}' does not exist")
+
+        csv_files = glob(f"{csv_export_dir}/*.csv")
+
+        if not csv_files:
+            raise Exception(f"No CSV files found in '{csv_export_dir}'")
+
+        csv_files = [Path(csv_file).stem for csv_file in csv_files]
+
+        for csv_name in ALL_LSA_CSV_NAMES:
+            if csv_name not in csv_files:
+                with open(f"{csv_export_dir}/{csv_name}.csv", "w") as f:
+                    fields = FIELD_LOOKUP[csv_name]
+                    print(f"Missing CSV. Creating [purple]'{csv_name}.csv[/purple]'")
+                    f.write(",".join(fields) + "\n")
+
+    # @staticmethod
+    # def retrieve_sample_data(
+    #     download_directory: str, download_url: str | None = None
+    # ) -> None:
+    #     """
+    #     Download the sample data from the HMIS Sample Data repository.
+
+    #     Args:
+    #         download_directory (str): Directory to save the sample data.
+    #         download_url (str, optional): URL to download the sample data from. Defaults to None.
+
+    #     Returns:
+    #         None
+    #     """
+
+    #     if not download_url:
+    #         download_url = HMIS_SAMPLE_DATA_URL
+
+    #     export_path = Path(download_directory)
+    #     if not export_path.exists():
+    #         export_path.mkdir()
+
+    #     response = requests.get(download_url)
+
+    #     if response.status_code == 200:
+    #         zipfile_buffer = ZipFile(BytesIO(response.content))
+    #         zipfile_buffer.extractall(download_directory)
+    #         print(f"Sample data downloaded to '{download_directory}'")
+    #     else:
+    #         raise Exception(
+    #             f"Failed to download sample data from '{HMIS_SAMPLE_DATA_URL}'"
+    #         )
 
 
 class OneBigLSACSV:
@@ -92,7 +157,10 @@ class OneBigLSACSV:
             ),
             # Funder
             JoinDefinition(
-                "Project", "Funder", "Project_ProjectID", "Funder_ProjectID"
+                "Project",
+                "Funder",
+                "Project_ProjectID",
+                "Funder_ProjectID",
             ),
             # HMISParticipation
             JoinDefinition(
