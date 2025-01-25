@@ -1,0 +1,158 @@
+Section,Flag ID,Variable That Flag Is Rendered On,Condition to Evaluate,Flag Text
+M1,1001,ESSHUniverse_1A,TH_DkRMHMIS_DQ,#NAME?
+M1,1001,ESSHAvgTime_1A,PSHOPH_DkRMHMIS_DQ,#NAME?
+M1,1001,ESSHMedianTime_1A,RRH_DkRMHMIS_DQ,#NAME?
+M1,1001,ESSHTHUniverse_1A,StOutreach_DkRMHMIS_DQ,#NAME?
+M1,1001,ESSHTHAvgTime_1A,ESSHUniverse_1A,#NAME?
+M1,1001,ESSHTHMedianTime_1A,ESSHAvgTime_1A,#NAME?
+M1,1001,ESSHUniverse_1B,ESSHMedianTime_1A,#NAME?
+M1,1001,ESSHAvgTime_1B,ESSHTHUniverse_1A,#NAME?
+M1,1001,ESSHMedianTime_1B,ESSHTHAvgTime_1A,#NAME?
+M1,1001,ESSHTHUniverse_1B,ESSHTHMedianTime_1A,#NAME?
+M1,1001,ESSHTHAvgTime_1B,ESSHUniverse_1B,#NAME?
+M1,1001,ESSHTHMedianTime_1B,ESSHAvgTime_1B,#NAME?
+M2,1001,SOExitPH_2,ESSHMedianTime_1B,#NAME?
+M2,1001,SOReturn0to180_2,ESSHTHUniverse_1B,#NAME?
+M2,1001,SOReturn181to365_2,ESSHTHAvgTime_1B,#NAME?
+M2,1001,SOReturn366to730_2,ESSHTHMedianTime_1B,#NAME?
+M2,1001,ESExitPH_2,SOExitPH_2,#NAME?
+M2,1001,ESReturn0to180_2,SOReturn0to180_2,#NAME?
+M2,1001,ESReturn181to365_2,SOReturn181to365_2,#NAME?
+M2,1001,ESReturn366to730_2,SOReturn366to730_2,#NAME?
+M2,1001,THExitPH_2,ESExitPH_2,#NAME?
+M2,1001,THReturn0to180_2,ESReturn0to180_2,#NAME?
+M2,1001,THReturn181to365_2,ESReturn181to365_2,#NAME?
+M2,1001,THReturn366to730_2,ESReturn366to730_2,#NAME?
+M2,1001,SHExitPH_2,THExitPH_2,#NAME?
+M2,1001,SHReturn0to180_2,THReturn0to180_2,#NAME?
+M2,1001,SHReturn181to365_2,THReturn181to365_2,#NAME?
+M2,1001,SHReturn366to730_2,THReturn366to730_2,#NAME?
+M2,1001,PHExitPH_2,SHExitPH_2,#NAME?
+M2,1001,PHReturn0to180_2,SHReturn0to180_2,#NAME?
+M2,1001,PHReturn181to365_2,SHReturn181to365_2,#NAME?
+M2,1001,PHReturn366to730_2,SHReturn366to730_2,#NAME?
+M3,1001,TotalAnnual_3,PHExitPH_2,#NAME?
+M3,1001,ESAnnual_3,PHReturn0to180_2,#NAME?
+M3,1001,SHAnnual_3,PHReturn181to365_2,#NAME?
+M3,1001,THAnnual_3,PHReturn366to730_2,#NAME?
+M4,1001,AdultStayers_4,TotalAnnual_3,#NAME?
+M4,1001,IncreaseEarned4_1,ESAnnual_3,#NAME?
+M4,1001,IncreaseOther4_2,SHAnnual_3,#NAME?
+M4,1001,IncreaseTotal4_3,THAnnual_3,#NAME?
+M4,1001,AdultLeavers_4,AdultStayers_4,#NAME?
+M4,1001,IncreaseEarned4_4,IncreaseEarned4_1,#NAME?
+M4,1001,IncreaseOther4_5,IncreaseOther4_2,#NAME?
+M4,1001,IncreaseTotal4_6,IncreaseTotal4_3,#NAME?
+M5,1001,EnterESSHTH5_1,AdultLeavers_4,#NAME?
+M5,1001,ESSHTHWithPriorSvc5_1,IncreaseEarned4_4,#NAME?
+M5,1001,EnterESSHTHPH5_2,IncreaseOther4_5,#NAME?
+M5,1001,ESSHTHPHWithPriorSvc,5_2,IncreaseTotal4_6 = NULL The ESSHTHPHWithPriorSvc5_2 field should not be blank.
+M7,1001,SOExit_7,EnterESSHTH5_1,#NAME?
+M7,1001,SOExitTempInst_7,ESSHTHWithPriorSvc5_1,#NAME?
+M7,1001,SOExitPH_7,EnterESSHTHPH5_2,#NAME?
+M7,1001,ESSHTHRRHExit_7,ESSHTHPHWithPriorSvc5_2,#NAME?
+M7,1001,ESSHTHRRHToPH_7,SOExit_7,#NAME?
+M7,1001,PHClients_7,SOExitTempInst_7,#NAME?
+M7,1001,PHClientsStayOrExitPH_7,SOExitPH_7,#NAME?
+DQ,1001,ESSH_UndupHMIS_DQ,ESSHTHRRHExit_7,#NAME?
+DQ,1001,TH_UndupHMIS_DQ,ESSHTHRRHToPH_7,#NAME?
+DQ,1001,PSHOPH_UndupHMIS_DQ,PHClients_7,#NAME?
+DQ,1001,RRH_UndupHMIS_DQ,PHClientsStayOrExitPH_7,#NAME?
+DQ,1001,StOutreach_UndupHMIS_DQ,ESSH_UndupHMIS_DQ,#NAME?
+DQ,1001,ESSH_LeaversHMIS_DQ,TH_UndupHMIS_DQ,#NAME?
+DQ,1001,TH_LeaversHMIS_DQ,PSHOPH_UndupHMIS_DQ,#NAME?
+DQ,1001,PSHOPH_LeaversHMIS_DQ,RRH_UndupHMIS_DQ,#NAME?
+DQ,1001,RRH_LeaversHMIS_DQ,StOutreach_UndupHMIS_DQ,#NAME?
+DQ,1001,StOutreach_LeaversHMIS_DQ,ESSH_LeaversHMIS_DQ,#NAME?
+DQ,1001,ESSH_DkRMHMIS_DQ,TH_LeaversHMIS_DQ,#NAME?
+DQ,1001,TH_DkRMHMIS_DQ,PSHOPH_LeaversHMIS_DQ,#NAME?
+DQ,1001,PSHOPH_DkRMHMIS_DQ,RRH_LeaversHMIS_DQ,#NAME?
+DQ,1001,RRH_DkRMHMIS_DQ,StOutreach_LeaversHMIS_DQ,#NAME?
+DQ,1001,StOutreach_DkRMHMIS_DQ,ESSH_DkRMHMIS_DQ,#NAME?
+Metadata,1002,ReportDateTime,"AND(ISNUMBER(DATEVALUE(ReportDateTime)),","TEXT(ReportDateTime, ""yyyy-mm-dd hh:mm:ss"")=ReportDateTime) The ReportDateTime field should be of the format ""yyyy-mm-dd hh:mm:ss""."
+Metadata,1003,ReportStartDate,"AND(OR(FiscalYear=2022,FiscalYear=2023),ReportStartDate=CONCAT(FiscalYear-1,""-10-01""))","The FY {FiscalYear} report start date should be October 1, {FiscalYear-1}."
+Metadata,1004,ReportStartDate,"AND(ISNUMBER(DATEVALUE(ReportStartDate)),","TEXT(ReportStartDate, ""yyyy-mm-dd"")=ReportStartDate) The FY {FiscalYear} report start date should be in the format ""yyyy-mm-dd""."
+Metadata,1005,ReportEndDate,"AND(OR(FiscalYear=2022,FiscalYear=2023),ReportEndDate=CONCAT(FiscalYear,""-09-30""))","The FY {FiscalYear} report end date should be October 1, {FiscalYear}."
+Metadata,1006,ReportEndDate,"AND(ISNUMBER(DATEVALUE(ReportEndDate)),","TEXT(ReportEndDate, ""yyyy-mm-dd"")=ReportEndDate) The FY {FiscalYear} report end date should be in the format ""yyyy-mm-dd""."
+M1,1101,ESSHTHUniverse_1A,ESSHTHUniverse_1A,< ESSHUniverse_1A We do not expect the universe in Metric 1.2 to be less than the universe in Metric 1.1.
+M1,1102,ESSHAvgTime_1A,ESSHAvgTime_1A,"> 3652 We do not expect this number to exceed 10 years (based on 3,652.5 nights in the validation logic)."
+M1,1103,ESSHMedianTime_1A,ESSHMedianTime_1A,"> 3652 We do not expect this number to exceed 10 years (based on 3,652.5 nights in the validation logic)."
+M1,1104,ESSHTHAvgTime_1A,ESSHTHAvgTime_1A,"> 3652 We do not expect this number to exceed 10 years (based on 3,652.5 nights in the validation logic)."
+M1,1105,ESSHTHMedianTime_1A,ESSHTHMedianTime_1A,"> 3652 We do not expect this number to exceed 10 years (based on 3,652.5 nights in the validation logic)."
+M2,1201,SOReturn0to180_2-pct,SOReturn0to180_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1202,SOReturn181to365_2-pct,SOReturn181to365_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1203,SOReturn366to730_2-pct,SOReturn366to730_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1204,SOExitPHTotal_2-pct,SOExitPHTotal_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1205,ESReturn0to180_2-pct,ESReturn0to180_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1206,ESReturn181to365_2-pct,ESReturn181to365_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1207,ESReturn366to730_2-pct,ESReturn366to730_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1208,ESExitPHTotal_2-pct,ESExitPHTotal_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1209,THReturn0to180_2-pct,THReturn0to180_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1210,THReturn181to365_2-pct,THReturn181to365_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1211,THReturn366to730_2-pct,THReturn366to730_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1212,THExitPHTotal_2-pct,THExitPHTotal_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1213,SHReturn0to180_2-pct,SHReturn0to180_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1214,SHReturn181to365_2-pct,SHReturn181to365_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1215,SHReturn366to730_2-pct,SHReturn366to730_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1216,SHExitPHTotal_2-pct,SHExitPHTotal_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1217,PHReturn0to180_2-pct,PHReturn0to180_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1218,PHReturn181to365_2-pct,PHReturn181to365_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1219,PHReturn366to730_2-pct,PHReturn366to730_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1220,PHExitPHTotal_2-pct,PHExitPHTotal_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1221,TotReturn0to180_2-pct,TotReturn0to180_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1222,TotReturn181to365_2-pct,TotReturn181to365_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1223,TotReturn366to730_2-pct,TotReturn366to730_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1224,TotExitPHTotal_2-pct,TotExitPHTotal_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M2,1225,SOReturn0to180_2,AND(,"SOExitPH_2 = 0, SOReturn0to180_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1226,SOReturn181to365_2,AND(,"SOExitPH_2 = 0, SOReturn181to365_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1227,SOReturn366to730_2,AND(,"SOExitPH_2 = 0, SOReturn366to730_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1228,ESReturn0to180_2,AND(,"ESExitPH_2 = 0,ESReturn0to180_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1229,ESReturn181to365_2,AND(,"ESExitPH_2 = 0,ESReturn181to365_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1230,ESReturn366to730_2,AND(,"ESExitPH_2 = 0,ESReturn366to730_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1231,THReturn0to180_2,AND(,"THExitPH_2 = 0,THReturn0to180_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1232,THReturn181to365_2,AND(,"THExitPH_2 = 0,THReturn181to365_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1233,THReturn366to730_2,AND(,"THExitPH_2 = 0,THReturn366to730_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1234,SHReturn0to180_2,AND(,"SHExitPH_2 = 0,SHReturn0to180_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1235,SHReturn181to365_2,AND(,"SHExitPH_2 = 0,SHReturn181to365_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1236,SHReturn366to730_2,AND(,"SHExitPH_2 = 0,SHReturn366to730_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1237,PHReturn0to180_2,AND(,"PHExitPH_2 = 0,PHReturn0to180_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1238,PHReturn181to365_2,AND(,"PHExitPH_2 = 0,PHReturn181to365_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M2,1239,PHReturn366to730_2,AND(,"PHExitPH_2 = 0,PHReturn366to730_2 > 0) You have reported a universe of zero and a numerator greater than zero."
+M3,1301,TotalAnnual_3,TotalAnnual_3,"< ESSHTHUniverse_1A This number should be greater than or equal to the universe of persons in ES, SH, and TH you reported for the current FY under Metric 1a.2 ({ESSHTHUniverse_1A})."
+M3,1302,TotalAnnual_3,OR(TotalAnnual_3,"< ESAnnual_3, TotalAnnual_3 < SHAnnual_3, TotalAnnual_3 < THAnnual_3) We expect this number to be at least as large as the smallest number you’ve reported below for Emergency Shelters, Safe Havens, and Transitional Housing."
+M3,1303,TotalAnnual_3,TotalAnnual_3,"> (ESAnnual_3 + SHAnnual_3 + THAnnual_3) We expect this number to be less than or equal to the sum of people in Emergency Shelters, Safe Havens, and Transitional Housing programs, ({ESAnnual_3 + SHAnnual_3 + THAnnual_3})."
+M4,1401,AdultStayers_4,AND(AdultStayers_4,"= 0, IncreaseEarned4_1 > 0) You have reported a universe of zero adult stayers but a numerator of more than zero adults with increased earned income ({IncreaseEarned4_1})."
+M4,1402,IncreaseEarned4_1,IncreaseEarned4_1-pct,> 1 We do not expect this percentage to exceed 100%.
+M4,1403,AdultStayers_4,AND(AdultStayers_4,"= 0, IncreaseOther4_2 > 0) You have reported a universe of zero adult stayers but a numerator of more than zero adults with increased non-employment cash income ({IncreaseOther4_2})."
+M4,1404,IncreaseOther4_2,IncreaseOther4_2-pct,> 1 We do not expect this percentage to exceed 100%.
+M4,1405,AdultStayers_4,AND(AdultStayers_4,"= 0, IncreaseTotal4_3 > 0) You have reported a universe of zero adult stayers but a numerator of more than zero adults with increased total income ({IncreaseTotal4_3})."
+M4,1406,IncreaseTotal4_3,IncreaseTotal4_3-pct,> 1 We do not expect this percentage to exceed 100%.
+M4,1407,IncreaseTotal4_3,IncreaseTotal4_3,> (IncreaseEarned4_1 + IncreaseOther4_2) The number of adults with increased total income ({IncreaseTotal4_4}) should not exceed the sum of the number of adults with increased earned income and the number of adults with increased non-employment cash income ({IncreaseEarned4_1 + IncreaseOther4_2}).
+M4,1408,IncreaseTotal4_3,IncreaseTotal4_3,"< MAX(IncreaseEarned4_1, IncreaseOther4_2) The number of adults with increased total income ({IncreaseTotal4_3}) should not be less than the greater of either the number of adults with increased earned income ({IncreaseEarned4_1}) or the number of adults with increased non-employment cash income ({IncreaseOther4_2})."
+M4,1409,AdultLeavers_4,AND(AdultLeavers_4,"= 0, IncreaseEarned4_4 > 0) You have reported a universe of zero adult leavers but a numerator of more than zero adults with increased earned income ({IncreaseEarned4_4})."
+M4,1410,IncreaseEarned4_4,IncreaseEarned4_4-pct,> 1 We do not expect this percentage to exceed 100%.
+M4,1411,AdultLeavers_4,AND(AdultLeavers_4,"= 0, IncreaseOther4_5 > 0) You have reported a universe of zero adult leavers but a numerator of more than zero adults with increased non-employment cash income ({IncreaseOther4_5})."
+M4,1412,IncreaseOther4_5,IncreaseOther4_5-pct,> 1 We do not expect this percentage to exceed 100%.
+M4,1413,AdultLeavers_4,AND(AdultLeavers_4,"= 0, IncreaseTotal4_6 > 0) You have reported a universe of zero adult leavers but a numerator of more than zero adults with increased total income ({IncreaseOther4_5})."
+M4,1414,IncreaseTotal4_6,IncreaseTotal4_6-pct,> 1 We do not expect this percentage to exceed 100%.
+M4,1415,IncreaseTotal4_6,IncreaseTotal4_6,"> MAX(IncreaseEarned4_4, IncreaseOther4_5) The number of adults with increased total income ({IncreaseTotal4_6}) should not be less than the greater of either the number of adults with increased earned income ({IncreaseEarned4_4}) or the number of adults with increased non-employment cash income ({IncreaseOther4_5})."
+M4,1416,IncreaseTotal4_6,IncreaseTotal4_6,> (IncreaseEarned4_4 + IncreaseOther4_5) The number of adults with increased total income ({IncreaseTotal4_6}) should not exceed the sum of the number of adults with increased earned income and the number of adults with increased non-employment cash income ({IncreaseEarned4_4 + IncreaseOther4_5}).
+M5,1501,ESSHTHWithPriorSvc5_1,ESSHTHWithPriorSvc5_1,> EnterESSHTH5_1 This number should not be greater than the universe ({EnterESSHTH5_1}).
+M5,1502,ESSHTHPHWithPriorSvc5_2,ESSHTHPHWithPriorSvc5_2,> EnterESSHTHPH5_2 This number should not be greater than the universe ({EnterESSHTHPH5_2}).
+M5,1503,ESSHTHPHWithPriorSvc5_2,EnterESSHTHPH5_2,< EnterESSHTH5_1 We do not expect the universe in Metric 5.2 to be less than the universe in Metric 5.1.
+M7,1701,SOExit_7,"AND(SOExit_7=0,SOExit_7<>'',OR(SOExitTempInst_7>0,SOExitPH_7>0))",You have reported a universe of zero and a numerator greater than zero.
+M7,1702,SOExitSuccess_7-pct,SOExitSuccess_7-pct,> 1 We do not expect this percentage to exceed 100%.
+M7,1703,ESSHTHRRHExit_7,"AND(ESSHTHRRHExit_7=0,ESSHTHRRHExit_7<>'',ESSHTHRRHToPH_7>0)",You have reported a universe of zero and a numerator greater than zero.
+M7,1704,ExitToPHSuccess_7-pct,ExitToPHSuccess_7-pct,> 1 We do not expect this percentage to exceed 100%.
+M7,1705,PHClients_7,"AND(PHClients_7=0,PHClients_7<>'',PHClientsStayOrExitPH_7>0)",You have reported a universe of zero and a numerator greater than zero.
+M7,1706,PHClientExitSuccess_7-pct,PHClientExitSuccess_7-pct,> 1 We do not expect this percentage to exceed 100%.
+DQ,1801,ESSH_UndupHMIS_DQ,"AND(ESSH_UndupHMIS_DQ=0,OR(ESSH_LeaversHMIS_DQ>0,ESSH_DkRMHMIS_DQ>0))","You reported zero unduplicated persons served in ES/SH but more than zero total leavers or leavers with destinations of Don't Know, Refused, or Missing."
+DQ,1802,TH_UndupHMIS_DQ,"AND(TH_UndupHMIS_DQ=0,OR(TH_LeaversHMIS_DQ>0,TH_DkRMHMIS_DQ>0))","You reported zero unduplicated persons served in TH but more than zero total leavers or leavers with destinations of Don't Know, Refused, or Missing."
+DQ,1803,PSHOPH_UndupHMIS_DQ,"AND(PSHOPH_UndupHMIS_DQ=0,OR(PSHOPH_LeaversHMIS_DQ>0,PSHOPH_DkRMHMIS_DQ>0))","You reported zero unduplicated persons served in PSH/OPH but more than zero total leavers or leavers with destinations of Don't Know, Refused, or Missing."
+DQ,1804,RRH_UndupHMIS_DQ,"AND(RRH_UndupHMIS_DQ=0,OR(RRH_LeaversHMIS_DQ>0,RRH_DkRMHMIS_DQ>0))","You reported zero unduplicated persons served in RRH but more than zero total leavers or leavers with destinations of Don't Know, Refused, or Missing."
+DQ,1805,StOutreach_UndupHMIS_DQ,"AND(StOutreach_UndupHMIS_DQ=0,OR(StOutreach_LeaversHMIS_DQ>0,StOutreach_DkRMHMIS_DQ>0))","You reported zero unduplicated persons served in Street Outreach but more than zero total leavers or leavers with destinations of Don't Know, Refused, or Missing."
+DQ,1806,ESSH_DkRMHMIS_DQ,ESSH_DkRMHMIS_DQ,"> ESSH_LeaversHMIS_DQ The number of leavers from ES/SH projects with destinations of Don't Know, Refused, or Missing is greater than the total number of leavers from these projects."
+DQ,1807,TH_DkRMHMIS_DQ,TH_DkRMHMIS_DQ,"> TH_LeaversHMIS_DQ The number of leavers from TH projects with destinations of Don't Know, Refused, or Missing is greater than the total number of leavers from these projects."
+DQ,1808,PSHOPH_DkRMHMIS_DQ,PSHOPH_DkRMHMIS_DQ,"> PSHOPH_LeaversHMIS_DQ The number of leavers from PSH/OPH projects with destinations of Don't Know, Refused, or Missing is greater than the total number of leavers from these projects."
+DQ,1809,RRH_DkRMHMIS_DQ,RRH_DkRMHMIS_DQ,"> RRH_LeaversHMIS_DQ The number of leavers from RRH projects with destinations of Don't Know, Refused, or Missing is greater than the total number of leavers from these projects."
+DQ,1810,StOutreach_DkRMHMIS_DQ,StOutreach_DkRMHMIS_DQ,"> StOutreach_LeaversHMIS_DQ The number of leavers from All Street Outreach with destinations of Don't Know, Refused, or Missing is greater than the total number of leavers from these projects."
